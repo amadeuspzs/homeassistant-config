@@ -2,6 +2,8 @@
 ![Pip Version](https://img.shields.io/badge/Pip-22.3.1-yellow.svg)
 ![HA Version](https://img.shields.io/badge/HA-2023.1.7-green.svg)
 
+[![Check HA config](https://github.com/amadeuspzs/homeassistant-config/actions/workflows/config-check.yaml/badge.svg)](https://github.com/amadeuspzs/homeassistant-config/actions/workflows/config-check.yaml)
+
 # Homeassistant core configuration
 
 > Linux nuc 4.15.0-202-generic #213-Ubuntu SMP Thu Jan 5 19:19:12 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux
