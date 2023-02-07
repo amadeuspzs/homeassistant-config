@@ -1,4 +1,6 @@
 ![Python Version](https://img.shields.io/badge/Python-3.10.9-blue.svg)
+![Pip Version](https://img.shields.io/badge/Pip-22.3.1-yellow.svg)
+![HA Version](https://img.shields.io/badge/HA-2023.1.7-green.svg)
 
 # Homeassistant core configuration
 
