@@ -16,6 +16,14 @@ influxdb:
   token: !secret influxdb_token
   organization: df0111dc4de9d828
   bucket: homeassistant 
+  exclude:
+    domains:
+      - media_player
+      - persistent_notification
+      - sun
+      - weather
+      - zone
+                
 
 # Load frontend themes from the themes folder
 frontend:
