@@ -8,6 +8,15 @@ default_config:
 http:
   server_port: 8124
 
+influxdb:
+  api_version: 2
+  ssl: false
+  host: localhost
+  port: 8086
+  token: !secret influxdb_token
+  organization: df0111dc4de9d828
+  bucket: homeassistant 
+
 # Load frontend themes from the themes folder
 frontend:
   themes: !include_dir_merge_named themes
