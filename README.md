@@ -22,3 +22,11 @@ DISTRIB_DESCRIPTION="Ubuntu 18.04.6 LTS"
 3. Activate virtualenv: `source /srv/homeassistant/bin/activate`
 4. Add recent sqlite path: `export LD_LIBRARY_PATH=/srv/sqlite/lib`
 5. Run `hass`
+
+## Manual items
+
+These do not appear to be stored in configuration files:
+
+1. User configuration
+2. MQTT integration
+3. Tasmota integration
