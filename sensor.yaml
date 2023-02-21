@@ -1,0 +1,22 @@
+# Automatically generated sensor config
+# from https://github.com/amadeuspzs/ha-config
+- platform: template
+  sensors:
+    bestie_power:
+      friendly_name: "Bestie Power"
+      unit_of_measurement: "%"
+      value_template: "{% set power = (100*(states('sensor.bestie_battery') | float - 3.0)/1.2) | round(1) %} {{ power if power <= 100 else 100 }}"
+      icon_template: >-
+        {% set battery_level = states('sensor.bestie_power')|int('unknown') %}
+        {% set battery_round = (battery_level|int / 10)|int * 10 %}
+        {% if battery_level == 'unknown' %}
+          mdi:battery-unknown
+        {% else %}
+          {% if battery_round >= 100 %}
+            mdi:battery
+          {% elif battery_round > 0 %}
+            mdi:battery-{{ battery_round }}
+          {% else %}
+            mdi:battery-alert
+          {% endif %}
+        {% endif %}

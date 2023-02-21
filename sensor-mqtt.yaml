@@ -35,3 +35,15 @@
 - state_topic: "reservoir/level/rssi"
   name: "Water Reservoir Signal"
   unit_of_measurement: "dBm"
+
+# Automatically generated sensor config
+# from https://github.com/amadeuspzs/ha-config
+- state_topic: "bestie/temperature"
+  name: "Bestie Temperature"
+  unit_of_measurement: "°C"
+- state_topic: "bestie/humidity"
+  name: "Bestie Humidity"
+  unit_of_measurement: "%"
+- state_topic: "bestie/vbatt"
+  name: "Bestie Battery"
+  unit_of_measurement: "V"
