@@ -1,0 +1,2 @@
+- state_topic: "radio/ping"
+  name: "Radio Ping"
