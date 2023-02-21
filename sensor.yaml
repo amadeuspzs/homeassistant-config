@@ -1,5 +1,17 @@
 # Automatically generated sensor config
 # from https://github.com/amadeuspzs/ha-config
+- platform: mqtt
+  state_topic: "bestie/temperature"
+  name: "Bestie Temperature"
+  unit_of_measurement: "°C"
+- platform: mqtt
+  state_topic: "bestie/humidity"
+  name: "Bestie Humidity"
+  unit_of_measurement: "%"
+- platform: mqtt
+  state_topic: "bestie/vbatt"
+  name: "Bestie Battery"
+  unit_of_measurement: "V"
 - platform: template
   sensors:
     bestie_power:
