@@ -1,2 +1,5 @@
 - state_topic: "radio/ping"
   name: "Radio Ping"
+- state_topic: "gc-hotwater/third/temperature"
+  name: "Garden Cottage Hot Water 1/3"
+  unit_of_measurement: "°C"
