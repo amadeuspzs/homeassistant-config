@@ -72,7 +72,7 @@
         "name": "Bathroom (Master)"
     },
     {
-        "topic": "attic/office/temperature",
+        "topic": "attic/office",
         "name": "Attic Office"
     }
 ]
