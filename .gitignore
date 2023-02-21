@@ -7,6 +7,7 @@
 !*.md
 !.github/
 !.github/*
+!sensors.json
 
 # Ignore folders.
 .storage

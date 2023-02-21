@@ -30,3 +30,5 @@ These do not appear to be stored in configuration files:
 1. User configuration
 2. MQTT integration
 3. Tasmota integration
+
+Config for sensors, where sensors are stored in `sensors.json` is generated via https://github.com/amadeuspzs/ha-config

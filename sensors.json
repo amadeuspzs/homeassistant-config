@@ -1,0 +1,78 @@
+[
+    {
+        "topic": "bestie",
+        "name": "Bestie"
+    },
+    {
+        "topic": "diningroom",
+        "name": "Dining Room"
+    },
+    {
+        "topic": "whiteroom",
+        "name": "White Room"
+    },
+    {
+        "topic": "drawingroom",
+        "name": "Drawing Room"
+    },
+    {
+        "topic": "gc-bathroom",
+        "name": "Garden Cottage Bathroom"
+    },
+    {
+        "topic": "gc-bedroom",
+        "name": "Garden Cottage Bedroom"
+    },
+    {
+        "topic": "gc-living-room",
+        "name": "Garden Cottage Living Room"
+    },
+    {
+        "topic": "livingroom-ka",
+        "name": "Living Room (K&A)"
+    },
+    {
+        "topic": "livingroom",
+        "name": "Living Room"
+    },
+    {
+        "topic": "laundry",
+        "name": "Laundry Room"
+    },
+    {
+        "topic": "greenhouse",
+        "name": "Greenhouse"
+    },
+    {
+        "topic": "pip",
+        "name": "Pip"
+    },
+    {
+        "topic": "kitchen",
+        "name": "Kitchen (Small)"
+    },
+    {
+        "topic": "tackroom",
+        "name": "Tackroom"
+    },
+    {
+        "topic": "bedroom-ka",
+        "name": "Bedroom (K&A)"
+    },
+    {
+        "topic": "kitchen-main",
+        "name": "Kitchen (Main)"
+    },
+    {
+        "topic": "bedroom-master",
+        "name": "Bedroom (Master)"
+    },
+    {
+        "topic": "bathroom-master",
+        "name": "Bathroom (Master)"
+    },
+    {
+        "topic": "attic/office/temperature",
+        "name": "Attic Office"
+    }
+]
