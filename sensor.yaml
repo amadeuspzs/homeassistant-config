@@ -1,9 +1,15 @@
 - platform: integration
   source: sensor.power
-  name: energy_house
+  name: Energy (House)
   unit_prefix: k
   round: 2
-  
+
+- platform: integration
+  source: sensor.garden_cottage_power
+  name: Energy (Garden Cottage)
+  unit_prefix: k
+  round: 2
+
 # Automatically generated sensor config
 # from https://github.com/amadeuspzs/ha-config
 - platform: template
