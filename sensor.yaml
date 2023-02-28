@@ -1,3 +1,9 @@
+- platform: integration
+  source: sensor.power
+  name: energy_house
+  unit_prefix: k
+  round: 2
+  
 # Automatically generated sensor config
 # from https://github.com/amadeuspzs/ha-config
 - platform: template
