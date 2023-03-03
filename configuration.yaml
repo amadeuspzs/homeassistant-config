@@ -33,7 +33,7 @@ frontend:
 tts:
   - platform: google_translate
 
-groups: !include groups.yaml
+group: !include groups.yaml
 automation: !include automations.yaml
 script: !include scripts.yaml
 scene: !include scenes.yaml
