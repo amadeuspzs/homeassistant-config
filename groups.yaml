@@ -1,0 +1,14 @@
+power:
+    name: Power sensors
+    entities:
+      - sensor.greenhouse_heater_energy_power
+      - sensor.kitchen_heater_energy_power
+      - sensor.laundry_heater_energy_power
+      - sensor.main_dishwasher_energy_power
+      - sensor.master_bedroom_heater_energy_power
+      - sensor.pip_s_heater_energy_power
+      - sensor.sebby_heater_energy_power
+      - sensor.small_dishwasher_energy_power
+      - sensor.tackroom_heater_energy_power
+      - sensor.tumble_dryer_energy_power
+      - sensor.washing_machine_energy_power
