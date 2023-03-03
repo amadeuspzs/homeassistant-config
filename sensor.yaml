@@ -10,13 +10,6 @@
   unit_prefix: k
   round: 2
 
-- platform: template
-  name: Group Power
-  unit_of_measurement: W
-  device_class: power
-  state: >
-    {{ expand('group.power') | selectattr("state", 'is_number') | map(attribute='state') |  map('float') | sum }}
-
 # Automatically generated sensor config
 # from https://github.com/amadeuspzs/ha-config
 - platform: template

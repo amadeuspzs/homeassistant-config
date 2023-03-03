@@ -1,0 +1,7 @@
+- sensor:
+  - name: Group Power
+    unit_of_measurement: W
+    state_class: measurement
+    device_class: power
+    state: >
+      {{ expand('group.power') | selectattr("state", 'is_number') | map(attribute='state') |  map('float') | sum }}

@@ -40,3 +40,4 @@ scene: !include scenes.yaml
 mqtt:
   sensor: !include sensor-mqtt.yaml
 sensor: !include sensor.yaml
+template: !include template.yaml
