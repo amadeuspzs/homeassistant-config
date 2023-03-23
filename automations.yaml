@@ -1,1 +1,20 @@
-[]
+- id: '1679575010017'
+  alias: Low battery warning
+  description: ''
+  trigger:
+  - platform: time
+    at: '12:37:00'
+  condition:
+  - condition: template
+    value_template: '{{ expand("group.batteries") |  map(attribute=''state'') | map(''int'')
+      | select(''<'', 90) | list | count > 0 }}
+
+      '
+  action:
+  - service: notify.notify
+    data:
+      message: '"Your message goes here"
+
+        '
+      title: Low battery warning
+  mode: single
