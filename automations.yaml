@@ -3,18 +3,39 @@
   description: ''
   trigger:
   - platform: time
-    at: '12:37:00'
+    at: 08:00:00
   condition:
   - condition: template
-    value_template: '{{ expand("group.batteries") |  map(attribute=''state'') | map(''int'')
-      | select(''<'', 90) | list | count > 0 }}
-
-      '
+    value_template: '{% set threshold = 50 %} {{ expand("group.batteries") |  map(attribute=''state'')
+      | map(''int'') | select(''<='', threshold) | list | count > 0 }}'
   action:
   - service: notify.notify
     data:
-      message: '"Your message goes here"
-
-        '
+      message: "{% set ns = namespace(low=[]) %}   {% set threshold = 50 %}  {%- for
+        sensor in expand(\"group.batteries\") -%}\n  {%- if int(sensor.state) <= threshold
+        -%}\n    {%- set ns.low = ns.low + [ sensor.name[:-6] ~ ' (' ~ sensor.state
+        | int ~ '%)'] %}\n  {%- endif -%} {%- endfor -%} \n{{ ns.low | join(\", \")
+        }}"
       title: Low battery warning
+  - service: notify.persistent_notification
+    data:
+      message: "{% set ns = namespace(low=[]) %}   {% set threshold = 50 %}  {%- for
+        sensor in expand(\"group.batteries\") -%}\n  {%- if int(sensor.state) <= threshold
+        -%}\n    {%- set ns.low = ns.low + [ sensor.name[:-6] ~ ' (' ~ sensor.state
+        | int ~ '%)'] %}\n  {%- endif -%} {%- endfor -%} \n{{ ns.low | join(\", \")
+        }}"
+      title: Low battery warning
+  mode: single
+- id: '1679926615102'
+  alias: 'Greenhouse too hot '
+  description: ''
+  trigger:
+  - platform: numeric_state
+    entity_id: sensor.greenhouse_temperature
+    above: 14
+  condition: []
+  action:
+  - service: notify.notify
+    data:
+      message: Greenhouse temperature above 25C!
   mode: single
