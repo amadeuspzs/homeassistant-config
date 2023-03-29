@@ -1,0 +1,11 @@
+- platform: generic_thermostat
+  name: Pip's room (Electric)
+  heater: switch.pip_s_heater
+  target_sensor: sensor.pip_temperature
+  min_temp: 15
+  max_temp: 20 
+  target_temp: 16
+  min_cycle_duration:
+    seconds: 60
+  precision: 0.1
+  hot_tolerance: 0.0
