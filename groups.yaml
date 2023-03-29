@@ -1,0 +1,48 @@
+critical:
+    name: Critical sensors
+    # sensors which control heating and need to be "live"
+    entities:
+      - sensor.pip_temperature
+      - sensor.hot_water
+      - sensor.attic_office_temperature
+      - sensor.tackroom_temperature
+      - sensor.greenhouse_temperature
+      - sensor.kitchen_small_temperature
+      #- sensor.water_reservoir  
+power:
+    name: Power sensors
+    entities:
+      - sensor.greenhouse_heater_energy_power
+      - sensor.kitchen_heater_energy_power
+      - sensor.laundry_heater_energy_power
+      - sensor.main_dishwasher_energy_power
+      - sensor.master_bedroom_heater_energy_power
+      - sensor.pip_s_heater_energy_power
+      - sensor.sebby_heater_energy_power
+      - sensor.small_dishwasher_energy_power
+      - sensor.tackroom_heater_energy_power
+      - sensor.tumble_dryer_energy_power
+      - sensor.washing_machine_energy_power
+
+batteries:
+    name: Sensor batteries
+    entities:
+      - sensor.attic_office_power
+      - sensor.bathroom_master_power
+      - sensor.bedroom_k_a_power
+      - sensor.bedroom_master_power
+      - sensor.bestie_power
+      - sensor.dining_room_power
+      - sensor.drawing_room_power
+      - sensor.garden_cottage_bathroom_power
+      - sensor.garden_cottage_bedroom_power
+      - sensor.garden_cottage_living_room_power
+      - sensor.greenhouse_power
+      - sensor.kitchen_main_power
+      - sensor.kitchen_small_power
+      - sensor.laundry_room_power
+      - sensor.living_room_k_a_power
+      - sensor.living_room_power
+      - sensor.pip_power
+      - sensor.tackroom_power
+      - sensor.white_room_power

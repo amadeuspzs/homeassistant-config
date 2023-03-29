@@ -1,0 +1,165 @@
+- platform: integration
+  source: sensor.power
+  name: Energy (House)
+  unit_prefix: k
+  round: 2
+
+- platform: integration
+  source: sensor.garden_cottage_power
+  name: Energy (Garden Cottage)
+  unit_prefix: k
+  round: 2
+
+# Automatically generated sensor config
+# from https://github.com/amadeuspzs/ha-config
+- platform: template
+  sensors:
+    bestie_power:
+      friendly_name: "Bestie Power"
+      unit_of_measurement: "%"
+      value_template: "{% set power = (100*(states('sensor.bestie_battery') | float)/4.2) | round(1) %} {{ power if power <= 100 else 100 }}"
+      device_class: battery
+
+- platform: template
+  sensors:
+    dining_room_power:
+      friendly_name: "Dining Room Power"
+      unit_of_measurement: "%"
+      value_template: "{% set power = (100*(states('sensor.dining_room_battery') | float)/4.2) | round(1) %} {{ power if power <= 100 else 100 }}"
+      device_class: battery
+
+- platform: template
+  sensors:
+    white_room_power:
+      friendly_name: "White Room Power"
+      unit_of_measurement: "%"
+      value_template: "{% set power = (100*(states('sensor.white_room_battery') | float)/4.2) | round(1) %} {{ power if power <= 100 else 100 }}"
+      device_class: battery
+
+- platform: template
+  sensors:
+    drawing_room_power:
+      friendly_name: "Drawing Room Power"
+      unit_of_measurement: "%"
+      value_template: "{% set power = (100*(states('sensor.drawing_room_battery') | float)/4.2) | round(1) %} {{ power if power <= 100 else 100 }}"
+      device_class: battery
+
+- platform: template
+  sensors:
+    garden_cottage_bathroom_power:
+      friendly_name: "Garden Cottage Bathroom Power"
+      unit_of_measurement: "%"
+      value_template: "{% set power = (100*(states('sensor.garden_cottage_bathroom_battery') | float)/4.2) | round(1) %} {{ power if power <= 100 else 100 }}"
+      device_class: battery
+
+- platform: template
+  sensors:
+    garden_cottage_bedroom_power:
+      friendly_name: "Garden Cottage Bedroom Power"
+      unit_of_measurement: "%"
+      value_template: "{% set power = (100*(states('sensor.garden_cottage_bedroom_battery') | float)/4.2) | round(1) %} {{ power if power <= 100 else 100 }}"
+      device_class: battery
+
+- platform: template
+  sensors:
+    garden_cottage_living_room_power:
+      friendly_name: "Garden Cottage Living Room Power"
+      unit_of_measurement: "%"
+      value_template: "{% set power = (100*(states('sensor.garden_cottage_living_room_battery') | float)/4.2) | round(1) %} {{ power if power <= 100 else 100 }}"
+      device_class: battery
+
+- platform: template
+  sensors:
+    living_room_k_a_power:
+      friendly_name: "Living Room (K&A) Power"
+      unit_of_measurement: "%"
+      value_template: "{% set power = (100*(states('sensor.living_room_k_a_battery') | float)/4.2) | round(1) %} {{ power if power <= 100 else 100 }}"
+      device_class: battery
+
+- platform: template
+  sensors:
+    living_room_power:
+      friendly_name: "Living Room Power"
+      unit_of_measurement: "%"
+      value_template: "{% set power = (100*(states('sensor.living_room_battery') | float)/4.2) | round(1) %} {{ power if power <= 100 else 100 }}"
+      device_class: battery
+
+- platform: template
+  sensors:
+    laundry_room_power:
+      friendly_name: "Laundry Room Power"
+      unit_of_measurement: "%"
+      value_template: "{% set power = (100*(states('sensor.laundry_room_battery') | float)/4.2) | round(1) %} {{ power if power <= 100 else 100 }}"
+      device_class: battery
+
+- platform: template
+  sensors:
+    greenhouse_power:
+      friendly_name: "Greenhouse Power"
+      unit_of_measurement: "%"
+      value_template: "{% set power = (100*(states('sensor.greenhouse_battery') | float)/4.2) | round(1) %} {{ power if power <= 100 else 100 }}"
+      device_class: battery
+
+- platform: template
+  sensors:
+    pip_power:
+      friendly_name: "Pip Power"
+      unit_of_measurement: "%"
+      value_template: "{% set power = (100*(states('sensor.pip_battery') | float)/4.2) | round(1) %} {{ power if power <= 100 else 100 }}"
+      device_class: battery
+
+- platform: template
+  sensors:
+    kitchen_small_power:
+      friendly_name: "Kitchen (Small) Power"
+      unit_of_measurement: "%"
+      value_template: "{% set power = (100*(states('sensor.kitchen_small_battery') | float)/4.2) | round(1) %} {{ power if power <= 100 else 100 }}"
+      device_class: battery
+
+- platform: template
+  sensors:
+    tackroom_power:
+      friendly_name: "Tackroom Power"
+      unit_of_measurement: "%"
+      value_template: "{% set power = (100*(states('sensor.tackroom_battery') | float)/4.2) | round(1) %} {{ power if power <= 100 else 100 }}"
+      device_class: battery
+
+- platform: template
+  sensors:
+    bedroom_k_a_power:
+      friendly_name: "Bedroom (K&A) Power"
+      unit_of_measurement: "%"
+      value_template: "{% set power = (100*(states('sensor.bedroom_k_a_battery') | float)/4.2) | round(1) %} {{ power if power <= 100 else 100 }}"
+      device_class: battery
+
+- platform: template
+  sensors:
+    kitchen_main_power:
+      friendly_name: "Kitchen (Main) Power"
+      unit_of_measurement: "%"
+      value_template: "{% set power = (100*(states('sensor.kitchen_main_battery') | float)/4.2) | round(1) %} {{ power if power <= 100 else 100 }}"
+      device_class: battery
+
+- platform: template
+  sensors:
+    bedroom_master_power:
+      friendly_name: "Bedroom (Master) Power"
+      unit_of_measurement: "%"
+      value_template: "{% set power = (100*(states('sensor.bedroom_master_battery') | float)/4.2) | round(1) %} {{ power if power <= 100 else 100 }}"
+      device_class: battery
+
+- platform: template
+  sensors:
+    bathroom_master_power:
+      friendly_name: "Bathroom (Master) Power"
+      unit_of_measurement: "%"
+      value_template: "{% set power = (100*(states('sensor.bathroom_master_battery') | float)/4.2) | round(1) %} {{ power if power <= 100 else 100 }}"
+      device_class: battery
+
+- platform: template
+  sensors:
+    attic_office_power:
+      friendly_name: "Attic Office Power"
+      unit_of_measurement: "%"
+      value_template: "{% set power = (100*(states('sensor.attic_office_battery') | float)/4.2) | round(1) %} {{ power if power <= 100 else 100 }}"
+      device_class: battery

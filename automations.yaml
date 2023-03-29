@@ -1,1 +1,60 @@
-[]
+- id: '1679575010017'
+  alias: Low battery warning
+  description: ''
+  trigger:
+  - platform: time
+    at: 08:00:00
+  condition:
+  - condition: template
+    value_template: '{% set threshold = 50 %} {{ expand("group.batteries") |  map(attribute=''state'')
+      | map(''int'') | select(''<='', threshold) | list | count > 0 }}'
+  action:
+  - service: notify.notify
+    data:
+      message: "{% set ns = namespace(low=[]) %}   {% set threshold = 50 %}  {%- for
+        sensor in expand(\"group.batteries\") -%}\n  {%- if int(sensor.state) <= threshold
+        -%}\n    {%- set ns.low = ns.low + [ sensor.name[:-6] ~ ' (' ~ sensor.state
+        | int ~ '%)'] %}\n  {%- endif -%} {%- endfor -%} \n{{ ns.low | join(\", \")
+        }}"
+      title: Low battery warning
+  - service: notify.persistent_notification
+    data:
+      message: "{% set ns = namespace(low=[]) %}   {% set threshold = 50 %}  {%- for
+        sensor in expand(\"group.batteries\") -%}\n  {%- if int(sensor.state) <= threshold
+        -%}\n    {%- set ns.low = ns.low + [ sensor.name[:-6] ~ ' (' ~ sensor.state
+        | int ~ '%)'] %}\n  {%- endif -%} {%- endfor -%} \n{{ ns.low | join(\", \")
+        }}"
+      title: Low battery warning
+  mode: single
+- id: '1679926615102'
+  alias: 'Greenhouse too hot '
+  description: ''
+  trigger:
+  - platform: numeric_state
+    entity_id: sensor.greenhouse_temperature
+    above: 14
+  condition: []
+  action:
+  - service: notify.notify
+    data:
+      message: Greenhouse temperature above 25C!
+  mode: single
+- id: '1680012121042'
+  alias: Stale sensor
+  description: ''
+  trigger:
+  - platform: webhook
+    webhook_id: -RwuPrAoOVcVGTQ505Aq_uPdA
+  condition: []
+  action:
+  - service: notify.notify
+    data:
+      title: Stale sensor warning
+      message: '{{ trigger.data["sensor"] }} not seen for {{ trigger.data["last_changed"]
+        }} hour(s)'
+  - service: persistent_notification.create
+    data:
+      title: Stale sensor warning
+      message: '{{ trigger.data["sensor"] }} not seen for {{ trigger.data["last_changed"]
+        }} hour(s)'
+  mode: single
