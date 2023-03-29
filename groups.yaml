@@ -8,6 +8,7 @@ critical:
       - sensor.tackroom_temperature
       - sensor.greenhouse_temperature
       - sensor.kitchen_small_temperature
+      - sensor.bedroom_master_temperature
       #- sensor.water_reservoir  
 power:
     name: Power sensors

@@ -9,3 +9,114 @@
     seconds: 60
   precision: 0.1
   hot_tolerance: 0.0
+- platform: generic_thermostat
+  name: Master Bedroom 
+  heater: switch.master_bedroom_heater
+  target_sensor: sensor.bedroom_master_temperature
+  min_temp: 15
+  max_temp: 20
+  target_temp: 16
+  min_cycle_duration:
+    seconds: 60
+  precision: 0.1
+  hot_tolerance: 0.0
+- platform: generic_thermostat
+  name: Kitchen
+  heater: switch.kitchen_heater
+  target_sensor: sensor.kitchen_small_temperature
+  min_temp: 15
+  max_temp: 20
+  target_temp: 18
+  min_cycle_duration:
+    seconds: 60
+  precision: 0.1
+  hot_tolerance: 0.0
+- platform: generic_thermostat
+  name: Hot Water Immersion
+  heater: switch.hot_water_immersion
+  target_sensor: sensor.hot_water
+  min_temp: 45
+  max_temp: 65
+  target_temp: 55
+  min_cycle_duration:
+    minutes: 15
+  precision: 0.1
+  hot_tolerance: 0.0
+- platform: generic_thermostat
+  name: Attic Office Combi
+  heater: switch.attic_radiator
+  target_sensor: sensor.attic_office_temperature
+  min_temp: 15
+  max_temp: 20
+  target_temp: 18
+  min_cycle_duration:
+    minutes: 15
+  precision: 0.1
+  hot_tolerance: 0.0
+- platform: generic_thermostat
+  name: Attic Office Electric
+  heater: switch.attic_office_electric_heater
+  target_sensor: sensor.attic_office_temperature
+  min_temp: 15
+  max_temp: 20
+  target_temp: 18
+  min_cycle_duration:
+    seconds: 60
+  precision: 0.1
+  hot_tolerance: 0.0
+- platform: generic_thermostat
+  name: Central Heating
+  heater: switch.oil_boiler
+  target_sensor: sensor.pip_temperature
+  min_temp: 15
+  max_temp: 20
+  target_temp: 18
+  min_cycle_duration:
+    minutes: 10
+  precision: 0.1
+  hot_tolerance: 0.0
+# - platform: generic_thermostat
+#   name: Tack Room
+#   heater: switch.tackroom_heater 
+#   target_sensor: sensor.tackroom_temperature
+#   min_temp: 0 
+#   max_temp: 20 
+#   target_temp: 10 
+#   min_cycle_duration:
+#     minutes: 10
+#   precision: 0.1
+#   hot_tolerance: 0.0
+# - platform: generic_thermostat
+#   name: Laundry Room
+#   heater: switch.laundry_heater
+#   target_sensor: sensor.laundry_temperature
+#   min_temp: 4 
+#   max_temp: 15
+#   target_temp: 8 
+#   min_cycle_duration:
+#     minutes: 10
+#   precision: 0.1
+#   hot_tolerance: 0.0
+- platform: generic_thermostat
+  name: Greenhouse
+  heater: switch.greenhouse_heater
+  target_sensor: sensor.greenhouse_temperature
+  min_temp: 0 
+  max_temp: 15
+  target_temp: 2.5 
+  min_cycle_duration:
+    minutes: 10
+  precision: 0.1
+  hot_tolerance: 0.0
+# - platform: generic_thermostat
+#   name: Sebby Electric
+#   heater: switch.sebby_heater
+#   target_sensor: sensor.living_room_k_a_temperature
+#   min_temp: 12 
+#   max_temp: 20
+#   target_temp: 18 
+#   min_cycle_duration:
+#     minutes: 10
+#   precision: 0.1
+#   hot_tolerance: 0.0
+
