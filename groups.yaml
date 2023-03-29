@@ -1,3 +1,14 @@
+critical:
+    name: Critical sensors
+    # sensors which control heating and need to be "live"
+    entities:
+      - sensor.pip_temperature
+      - sensor.hot_water
+      - sensor.attic_office_temperature
+      - sensor.tackroom_temperature
+      - sensor.greenhouse_temperature
+      - sensor.kitchen_small_temperature
+      #- sensor.water_reservoir  
 power:
     name: Power sensors
     entities:

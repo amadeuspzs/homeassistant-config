@@ -39,3 +39,22 @@
     data:
       message: Greenhouse temperature above 25C!
   mode: single
+- id: '1680012121042'
+  alias: Stale sensor
+  description: ''
+  trigger:
+  - platform: webhook
+    webhook_id: -RwuPrAoOVcVGTQ505Aq_uPdA
+  condition: []
+  action:
+  - service: notify.notify
+    data:
+      title: Stale sensor warning
+      message: '{{ trigger.data["sensor"] }} not seen for {{ trigger.data["last_changed"]
+        }} hour(s)'
+  - service: persistent_notification.create
+    data:
+      title: Stale sensor warning
+      message: '{{ trigger.data["sensor"] }} not seen for {{ trigger.data["last_changed"]
+        }} hour(s)'
+  mode: single
