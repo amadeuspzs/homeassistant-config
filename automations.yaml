@@ -27,17 +27,27 @@
       title: Low battery warning
   mode: single
 - id: '1679926615102'
-  alias: 'Greenhouse too hot '
-  description: ''
+  alias: Greenhouse temperature warning
+  description: Too hot or too cold
   trigger:
   - platform: numeric_state
     entity_id: sensor.greenhouse_temperature
-    above: 14
+    above: 30
+  - platform: numeric_state
+    entity_id: sensor.greenhouse_temperature
+    below: 5
   condition: []
   action:
   - service: notify.notify
     data:
-      message: Greenhouse temperature above 25C!
+      message: 'Greenhouse temperature: {{ states(''sensor.greenhouse_temperature'')
+        | round(1) }} °C'
+      title: Greenhouse temperature warning
+  - service: notify.persistent_notification
+    data:
+      message: 'Greenhouse temperature: {{ states(''sensor.greenhouse_temperature'')
+        | round(1) }} °C'
+      title: Greenhouse temperature warning
   mode: single
 - id: '1680012121042'
   alias: Stale sensor
