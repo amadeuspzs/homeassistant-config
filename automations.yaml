@@ -68,3 +68,329 @@
       message: '{{ trigger.data["sensor"] }} not seen for {{ trigger.data["last_changed"]
         }} hour(s)'
   mode: single
+- id: '1583793635215'
+  alias: Pip's heating on
+  description: Make sure Pip's room never less than 16C
+  trigger:
+  - at: '18:30'
+    platform: time
+  condition: []
+  action:
+  - data: {}
+    service: climate.turn_on
+    target:
+      entity_id:
+      - climate.pip_s_room
+  - service: climate.set_temperature
+    data:
+      temperature: 16
+    target:
+      entity_id:
+      - climate.pip_s_room
+  mode: single
+- id: '1583793687978'
+  alias: Pip's heating off
+  description: Make sure Pip's room never less than 16C
+  trigger:
+  - at: 06:00
+    platform: time
+  condition: []
+  action:
+  - data: {}
+    service: climate.turn_off
+    target:
+      entity_id:
+      - climate.pip_s_room
+  mode: single
+- id: '1585479851181'
+  alias: Attic Heating On
+  description: Monday - Thursday
+  trigger:
+  - at: 08:00
+    platform: time
+  condition:
+  - condition: time
+    weekday:
+    - mon
+    - tue
+    - wed
+    - thu
+  action:
+  - type: turn_on
+    device_id: 761ef68fa54a4a7881f7be9a21a8f431
+    entity_id: switch.attic_boiler
+    domain: switch
+  - service: homeassistant.turn_on
+    target:
+      entity_id: group.attic_heating
+  mode: single
+- id: '1585479910387'
+  alias: Attic Heating Off (MTWT)
+  description: ''
+  trigger:
+  - at: '17:15'
+    platform: time
+  condition:
+  - condition: time
+    weekday:
+    - mon
+    - tue
+    - wed
+    - thu
+  action:
+  - service: homeassistant.turn_off
+    target:
+      entity_id: group.attic_heating
+  - type: turn_off
+    device_id: 761ef68fa54a4a7881f7be9a21a8f431
+    entity_id: switch.attic_boiler
+    domain: switch
+  mode: single
+- id: '1589031338739'
+  alias: Oil Boiler On (Morning)
+  description: ''
+  trigger:
+  - platform: time
+    at: 05:30:00
+  condition: []
+  action:
+  - data: {}
+    entity_id: climate.central_heating
+    service: climate.turn_on
+  - type: turn_off
+    device_id: c639fbc404b04062a0623a6366b1d147
+    entity_id: switch.seed_mat
+    domain: switch
+  mode: single
+- id: '1589031374264'
+  alias: Oil Boiler Off
+  description: ''
+  trigger:
+  - platform: time
+    at: 07:00
+  - at: '21:00:00'
+    platform: time
+  condition: []
+  action:
+  - data: {}
+    entity_id: climate.central_heating
+    service: climate.turn_off
+  - delay:
+      hours: 1
+      minutes: 0
+      seconds: 0
+      milliseconds: 0
+  - type: turn_on
+    device_id: c639fbc404b04062a0623a6366b1d147
+    entity_id: switch.seed_mat
+    domain: switch
+  mode: single
+- id: '1593616611856'
+  alias: Towel Radiators On
+  description: Switch on twice a day
+  trigger:
+  - at: '6:30:00'
+    platform: time
+  - platform: time
+    at: '18:30:00'
+  condition: []
+  action:
+  - type: turn_on
+    device_id: cf9a6fd56a6e479083dd8a009009d843
+    entity_id: switch.shower_towel_radiator
+    domain: switch
+  - type: turn_on
+    device_id: 4bc7db6c1e3ea691424de81704d011b1
+    entity_id: switch.bathroom_towel_radiator
+    domain: switch
+  mode: single
+- id: '1595402424113'
+  alias: Hot Water Bath On
+  description: Set to 55C for bath between 5.30pm and 8.00pm
+  trigger:
+  - at: '17:00:00'
+    platform: time
+  condition: []
+  action:
+  - data:
+      temperature: 55
+    service: climate.set_temperature
+    target:
+      entity_id: climate.hot_water_immersion
+  - data: {}
+    entity_id: climate.hot_water_immersion
+    service: climate.turn_on
+  mode: single
+- id: '1600861399230'
+  alias: Tower Radiators Off
+  description: Leave on for 2 hours a day
+  trigger:
+  - at: 08:30:00
+    platform: time
+  - platform: time
+    at: '20:30:00'
+  condition: []
+  action:
+  - type: turn_off
+    device_id: cf9a6fd56a6e479083dd8a009009d843
+    entity_id: switch.shower_towel_radiator
+    domain: switch
+  - type: turn_off
+    device_id: 4bc7db6c1e3ea691424de81704d011b1
+    entity_id: switch.bathroom_towel_radiator
+    domain: switch
+  mode: single
+- id: '1600861508332'
+  alias: Hot Water Bath Off
+  description: Kids
+  trigger:
+  - at: '20:00:00'
+    platform: time
+  condition: []
+  action:
+  - data: {}
+    entity_id: climate.hot_water_immersion
+    service: climate.turn_off
+  mode: single
+- id: '1602964318533'
+  alias: Kitchen Heating On
+  description: AirBnB
+  trigger:
+  - at: 07:00
+    platform: time
+  - at: '17:00'
+    platform: time
+  condition: []
+  action:
+  - data: {}
+    entity_id: climate.kitchen
+    service: climate.turn_on
+  mode: single
+- id: '1602964390042'
+  alias: Kitchen Heating Off
+  description: ''
+  trigger:
+  - at: 09:00
+    platform: time
+  - at: '20:00'
+    platform: time
+  condition: []
+  action:
+  - data: {}
+    entity_id: climate.kitchen
+    service: climate.turn_off
+  mode: single
+- id: '1616575764487'
+  alias: Oil Boiler On (Evening)
+  description: ''
+  trigger:
+  - at: '17:00:00'
+    platform: time
+  condition: []
+  action:
+  - data: {}
+    entity_id: climate.central_heating
+    service: climate.turn_on
+  - type: turn_off
+    device_id: c639fbc404b04062a0623a6366b1d147
+    entity_id: switch.seed_mat
+    domain: switch
+  mode: single
+- id: '1634585277038'
+  alias: Tackroom & Laundry Heating On
+  description: ''
+  trigger:
+  - platform: time
+    at: '22:00'
+  condition: []
+  action:
+  - type: turn_on
+    device_id: 088c4fdcc84073321935c6a00f821fbb
+    entity_id: switch.tackroom_heater
+    domain: switch
+  - type: turn_on
+    device_id: ce44b52ec54be73a6721b3e01bbdc677
+    entity_id: switch.laundry_heater
+    domain: switch
+  mode: single
+- id: '1634585304967'
+  alias: Tackroom & Laundry Heating Off
+  description: ''
+  trigger:
+  - platform: time
+    at: 02:00
+  condition: []
+  action:
+  - type: turn_off
+    device_id: 088c4fdcc84073321935c6a00f821fbb
+    entity_id: switch.tackroom_heater
+    domain: switch
+  - type: turn_off
+    device_id: ce44b52ec54be73a6721b3e01bbdc677
+    entity_id: switch.laundry_heater
+    domain: switch
+  mode: single
+- id: '1636110238201'
+  alias: Attic Visitors Weekend on
+  description: ''
+  trigger:
+  - platform: time
+    at: '18:00:00'
+  - platform: time
+    at: 05:00:00
+  condition: []
+  action:
+  - type: turn_on
+    device_id: 761ef68fa54a4a7881f7be9a21a8f431
+    entity_id: switch.attic_boiler
+    domain: switch
+  - type: turn_on
+    device_id: 761ef68fa54a4a7881f7be9a21a8f431
+    entity_id: switch.attic_radiator
+    domain: switch
+  mode: single
+- id: '1636110308988'
+  alias: Attic Visitors Weekend off
+  description: ''
+  trigger:
+  - platform: time
+    at: '23:00:00'
+  - platform: time
+    at: 09:00:00
+  condition: []
+  action:
+  - type: turn_off
+    device_id: 761ef68fa54a4a7881f7be9a21a8f431
+    entity_id: switch.attic_radiator
+    domain: switch
+  - type: turn_off
+    device_id: 761ef68fa54a4a7881f7be9a21a8f431
+    entity_id: switch.attic_boiler
+    domain: switch
+  mode: single
+- id: '1676556187794'
+  alias: Grow light on
+  description: ''
+  trigger:
+  - platform: time
+    at: 06:00:00
+  condition: []
+  action:
+  - type: turn_on
+    device_id: 9b047ec8e83543bcb2e76130a25f0abe
+    entity_id: switch.grow_light
+    domain: switch
+  mode: single
+- id: '1676556207273'
+  alias: Grow light off
+  description: ''
+  trigger:
+  - platform: time
+    at: '22:00:00'
+  condition: []
+  action:
+  - type: turn_off
+    device_id: 9b047ec8e83543bcb2e76130a25f0abe
+    entity_id: switch.grow_light
+    domain: switch
+  mode: single
