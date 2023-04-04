@@ -10,6 +10,13 @@
   unit_prefix: k
   round: 2
 
+- platform: template
+  sensors:
+    water_reservoir_level:
+      friendly_name: "Water Reservoir Level"
+      unit_of_measurement: "cm"
+      value_template: "{{ (243.5 - float(states('sensor.water_reservoir'))) | round(1) }}"
+
 # Automatically generated sensor config
 # from https://github.com/amadeuspzs/ha-config
 
