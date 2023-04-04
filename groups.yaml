@@ -11,6 +11,7 @@ critical:
       - sensor.kitchen_small_temperature
       - sensor.bedroom_master_temperature
       - sensor.water_reservoir_signal 
+
 power:
     name: Power sensors
     entities:
@@ -48,3 +49,9 @@ batteries:
       - sensor.pip_power
       - sensor.tackroom_power
       - sensor.white_room_power
+
+attic_heating:
+  name: Attic Heating
+  entities:
+    - climate.attic_office_combi
+    - climate.attic_office_electric
