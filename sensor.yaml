@@ -19,14 +19,12 @@
     group_power:
       friendly_name: "Group Power"
       unit_of_measurement: W
-      state_class: measurement
       device_class: power
       value_template: >
         {{ expand('group.power') | selectattr("state", 'is_number') | map(attribute='state') |  map('int') | sum }}
     phantom_power:
       friendly_name: "Phantom Power"
       unit_of_measurement: W
-      state_class: measurement
       device_class: power
       value_template: >
         {{ (states('sensor.power') | int) - (states('sensor.group_power') | int) }}
