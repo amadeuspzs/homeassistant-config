@@ -41,3 +41,14 @@ mqtt:
 sensor: !include sensor.yaml
 climate: !include climate.yaml
 automation: !include automations.yaml
+
+recorder:
+  exclude:
+    domains:
+      - media_player
+      - sun
+      - persistent_notification
+    entity_globs:
+      - *_connect_count
+      - sensor.pixel*
+      - binary_sensor.pixel*
