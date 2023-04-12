@@ -49,6 +49,6 @@ recorder:
       - sun
       - persistent_notification
     entity_globs:
-      - *_connect_count
+      - sensor.*_connect_count
       - sensor.pixel*
       - binary_sensor.pixel*
