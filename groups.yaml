@@ -55,3 +55,31 @@ attic_heating:
   entities:
     - climate.attic_office_combi
     - climate.attic_office_electric
+
+west_wing:
+  name: West Wing
+  entities:
+    - sensor.bedroom_k_a_temperature
+    - sensor.living_room_k_a_temperature
+    - sensor.bestie_temperature
+    - sensor.pip_temperature
+    - sensor.kitchen_main_temperature
+    - sensor.kitchen_small_temperature
+    - sensor.laundry_room_temperature
+    - sensor.living_room_temperature
+
+east_wing:
+  name: East Wing
+  entities:
+    - sensor.drawing_room_temperature
+    - sensor.dining_room_temperature
+    - sensor.white_room_temperature
+    - sensor.bathroom_master_temperature
+    - sensor.bedroom_master_temperature
+    - sensor.attic_office_temperature
+
+outbuildings:
+  name: Outbuildings
+  entities:
+    - sensor.greenhouse_temperature
+    - sensor.tackroom_temperature
