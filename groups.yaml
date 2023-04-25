@@ -108,3 +108,16 @@ heaters:
   - switch.seed_mat
   - switch.shower_towel_radiator
   - switch.tackroom_heater
+
+# thermostats
+thermostats:
+  name: thermostats
+  entities:
+  - climate.attic_office_combi
+  - climate.attic_office_electric
+  - climate.central_heating
+  - climate.greenhouse
+  - climate.hot_water_immersion
+  - climate.kitchen
+  - climate.master_bedroom
+  - climate.pip_s_room_electric
