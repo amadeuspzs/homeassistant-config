@@ -8,6 +8,7 @@
 !.github/
 !.github/*
 !sensors.json
+!.storage/lovelace
 
 # Ignore folders.
 .storage
