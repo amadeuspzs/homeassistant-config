@@ -9,6 +9,10 @@
           "title": "Home",
           "cards": [
             {
+              "type": "entity",
+              "entity": "sensor.power"
+            },
+            {
               "type": "statistic",
               "entity": "sensor.energy_house",
               "period": {
@@ -18,6 +22,57 @@
               },
               "stat_type": "change",
               "name": "Energy today"
+            },
+            {
+              "type": "custom:auto-entities",
+              "card": {
+                "type": "entities"
+              },
+              "filter": {
+                "include": [
+                  {
+                    "group": "group.automations"
+                  }
+                ],
+                "exclude": []
+              },
+              "sort": {
+                "method": "friendly_name"
+              }
+            },
+            {
+              "type": "custom:auto-entities",
+              "filter": {
+                "include": [
+                  {
+                    "group": "group.thermostats"
+                  }
+                ],
+                "exclude": []
+              },
+              "card": {
+                "type": "entities"
+              },
+              "sort": {
+                "method": "friendly_name"
+              }
+            },
+            {
+              "type": "custom:auto-entities",
+              "filter": {
+                "include": [
+                  {
+                    "group": "group.heaters"
+                  }
+                ],
+                "exclude": []
+              },
+              "sort": {
+                "method": "friendly_name"
+              },
+              "card": {
+                "type": "entities"
+              }
             },
             {
               "type": "custom:auto-entities",
@@ -57,54 +112,71 @@
               }
             },
             {
-              "type": "history-graph",
-              "entities": [
-                {
-                  "entity": "switch.attic_boiler"
-                },
-                {
-                  "entity": "switch.attic_boiler_2"
-                },
-                {
-                  "entity": "switch.bathroom_towel_radiator"
-                },
-                {
-                  "entity": "switch.sebby_heater"
-                },
-                {
-                  "entity": "switch.greenhouse_heater"
-                },
-                {
-                  "entity": "switch.grow_light"
-                },
-                {
-                  "entity": "switch.hot_water_immersion"
-                },
-                {
-                  "entity": "switch.kitchen_heater"
-                },
-                {
-                  "entity": "switch.laundry_heater"
-                },
-                {
-                  "entity": "switch.master_bedroom_heater"
-                },
-                {
-                  "entity": "switch.oil_boiler"
-                },
-                {
-                  "entity": "switch.pip_s_heater"
-                },
-                {
-                  "entity": "switch.seed_mat"
-                },
-                {
-                  "entity": "switch.shower_towel_radiator"
-                },
-                {
-                  "entity": "switch.tackroom_heater"
-                }
-              ]
+              "type": "custom:auto-entities",
+              "filter": {
+                "include": [
+                  {
+                    "group": "group.heaters"
+                  }
+                ],
+                "exclude": []
+              },
+              "card": {
+                "type": "history-graph",
+                "title": "Heaters"
+              },
+              "sort": {
+                "method": "friendly_name"
+              }
+            },
+            {
+              "type": "custom:auto-entities",
+              "filter": {
+                "include": [
+                  {
+                    "group": "group.west_wing"
+                  }
+                ],
+                "exclude": []
+              },
+              "card": {
+                "type": "history-graph",
+                "title": "West Wing"
+              },
+              "sort": {
+                "method": "friendly_name",
+                "ignore_case": false
+              }
+            },
+            {
+              "type": "custom:auto-entities",
+              "filter": {
+                "include": [
+                  {
+                    "group": "group.east_wing"
+                  }
+                ],
+                "exclude": []
+              },
+              "card": {
+                "type": "history-graph",
+                "title": "East Wing"
+              }
+            },
+            {
+              "type": "custom:auto-entities",
+              "filter": {
+                "include": [
+                  {
+                    "group": "group.outbuildings"
+                  }
+                ],
+                "exclude": []
+              },
+              "card": {
+                "type": "history-graph",
+                "title": "Outbuildings"
+              }
             }
           ]
         },
