@@ -346,7 +346,7 @@
     domain: switch
   - type: turn_on
     device_id: 761ef68fa54a4a7881f7be9a21a8f431
-    entity_id: switch.attic_radiator
+    entity_id: switch.attic_radiators
     domain: switch
   mode: single
 - id: '1636110308988'
@@ -361,7 +361,7 @@
   action:
   - type: turn_off
     device_id: 761ef68fa54a4a7881f7be9a21a8f431
-    entity_id: switch.attic_radiator
+    entity_id: switch.attic_radiators
     domain: switch
   - type: turn_off
     device_id: 761ef68fa54a4a7881f7be9a21a8f431

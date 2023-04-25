@@ -44,7 +44,7 @@
   hot_tolerance: 0.0
 - platform: generic_thermostat
   name: Attic Office Combi
-  heater: switch.attic_radiator
+  heater: switch.attic_radiators
   target_sensor: sensor.attic_office_temperature
   min_temp: 15
   max_temp: 20

@@ -30,5 +30,8 @@ These do not appear to be stored in configuration files:
 1. User configuration
 2. MQTT integration
 3. Tasmota integration
+4. [HACS](https://hacs.xyz/docs/setup/download)
+5. [Lovelace auto-entities](https://github.com/thomasloven/lovelace-auto-entities)
+6. Naming of some entities e.g. attic radiators
 
 Config for sensors, where sensors are stored in `sensors.json` is generated via https://github.com/amadeuspzs/ha-config
