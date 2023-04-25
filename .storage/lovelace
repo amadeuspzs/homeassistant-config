@@ -1,0 +1,219 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "lovelace",
+  "data": {
+    "config": {
+      "views": [
+        {
+          "title": "Home",
+          "cards": [
+            {
+              "type": "statistic",
+              "entity": "sensor.energy_house",
+              "period": {
+                "calendar": {
+                  "period": "day"
+                }
+              },
+              "stat_type": "change",
+              "name": "Energy today"
+            },
+            {
+              "type": "custom:auto-entities",
+              "card": {
+                "type": "entities",
+                "title": "Critical Sensors"
+              },
+              "filter": {
+                "include": [
+                  {
+                    "group": "group.critical"
+                  }
+                ]
+              },
+              "show_empty": true,
+              "sort": {
+                "method": "friendly_name"
+              }
+            },
+            {
+              "type": "custom:auto-entities",
+              "card": {
+                "type": "entities",
+                "title": "Batteries",
+                "state_color": true
+              },
+              "filter": {
+                "include": [
+                  {
+                    "group": "group.batteries"
+                  }
+                ],
+                "exclude": []
+              },
+              "sort": {
+                "method": "friendly_name"
+              }
+            },
+            {
+              "type": "history-graph",
+              "entities": [
+                {
+                  "entity": "switch.attic_boiler"
+                },
+                {
+                  "entity": "switch.attic_boiler_2"
+                },
+                {
+                  "entity": "switch.bathroom_towel_radiator"
+                },
+                {
+                  "entity": "switch.sebby_heater"
+                },
+                {
+                  "entity": "switch.greenhouse_heater"
+                },
+                {
+                  "entity": "switch.grow_light"
+                },
+                {
+                  "entity": "switch.hot_water_immersion"
+                },
+                {
+                  "entity": "switch.kitchen_heater"
+                },
+                {
+                  "entity": "switch.laundry_heater"
+                },
+                {
+                  "entity": "switch.master_bedroom_heater"
+                },
+                {
+                  "entity": "switch.oil_boiler"
+                },
+                {
+                  "entity": "switch.pip_s_heater"
+                },
+                {
+                  "entity": "switch.seed_mat"
+                },
+                {
+                  "entity": "switch.shower_towel_radiator"
+                },
+                {
+                  "entity": "switch.tackroom_heater"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "theme": "Backend-selected",
+          "title": "GC",
+          "path": "gc",
+          "badges": [
+            {
+              "entity": "sensor.garden_cottage_living_room_temperature"
+            },
+            {
+              "entity": "sensor.garden_cottage_bedroom_temperature"
+            },
+            {
+              "entity": "sensor.garden_cottage_bathroom_temperature"
+            },
+            {
+              "entity": "switch.gc_hot_water_immersion"
+            }
+          ],
+          "cards": [
+            {
+              "type": "entities",
+              "entities": [
+                {
+                  "entity": "sensor.garden_cottage_power"
+                },
+                {
+                  "entity": "switch.gc_hot_water_immersion"
+                },
+                {
+                  "entity": "sensor.garden_cottage_living_room_temperature"
+                },
+                {
+                  "entity": "sensor.garden_cottage_bedroom_temperature"
+                },
+                {
+                  "entity": "sensor.garden_cottage_bathroom_temperature"
+                },
+                {
+                  "entity": "sensor.garden_cottage_living_room_power"
+                },
+                {
+                  "entity": "sensor.garden_cottage_bedroom_power"
+                },
+                {
+                  "entity": "sensor.garden_cottage_bathroom_power"
+                }
+              ]
+            },
+            {
+              "type": "history-graph",
+              "entities": [
+                {
+                  "entity": "sensor.garden_cottage_living_room_temperature"
+                },
+                {
+                  "entity": "sensor.garden_cottage_bedroom_temperature"
+                },
+                {
+                  "entity": "sensor.garden_cottage_bathroom_temperature"
+                },
+                {
+                  "entity": "sensor.garden_cottage_living_room_humidity"
+                },
+                {
+                  "entity": "sensor.garden_cottage_bedroom_humidity"
+                },
+                {
+                  "entity": "sensor.garden_cottage_bathroom_humidity"
+                }
+              ],
+              "hours_to_show": 48
+            },
+            {
+              "type": "history-graph",
+              "entities": [
+                {
+                  "entity": "sensor.garden_cottage_hot_water_1_3"
+                },
+                {
+                  "entity": "sensor.garden_cottage_hot_water_outlet"
+                }
+              ],
+              "hours_to_show": 24
+            },
+            {
+              "type": "history-graph",
+              "entities": [
+                {
+                  "entity": "sensor.garden_cottage_power"
+                }
+              ]
+            },
+            {
+              "type": "statistic",
+              "entity": "sensor.energy_garden_cottage",
+              "period": {
+                "calendar": {
+                  "period": "day"
+                }
+              },
+              "stat_type": "change",
+              "name": "Energy today"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
