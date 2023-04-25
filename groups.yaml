@@ -121,3 +121,18 @@ thermostats:
   - climate.kitchen
   - climate.master_bedroom
   - climate.pip_s_room_electric
+
+# automations of interest
+automations:
+  name: automations
+  entities:
+  - automation.attic_heating_on
+  - automation.attic_visitors_weekend_on
+  - automation.grow_light_on
+  - automation.hot_water_bath_on
+  - automation.kitchen_heating_on
+  - automation.oil_boiler_on_evening
+  - automation.oil_boiler_on_morning
+  - automation.pip_s_heating_on
+  - automation.tackroom_laundry_heating_on
+  - automation.towel_radiators_on
