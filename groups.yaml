@@ -1,6 +1,6 @@
+# sensors which control heating and need to be "live"
 critical:
     name: Critical sensors
-    # sensors which control heating and need to be "live"
     entities:
       - sensor.pip_temperature
       - sensor.hot_water
@@ -12,6 +12,7 @@ critical:
       - sensor.bedroom_master_temperature
       - sensor.water_reservoir_signal 
 
+# smart plug energy sensors, tied to phantom calculation
 power:
     name: Power sensors
     entities:
@@ -27,6 +28,7 @@ power:
       - sensor.tumble_dryer_energy_power
       - sensor.washing_machine_energy_power
 
+# sensors with batteries
 batteries:
     name: Sensor batteries
     entities:
@@ -50,12 +52,14 @@ batteries:
       - sensor.tackroom_power
       - sensor.white_room_power
 
+# attic heating is both combi and electric
 attic_heating:
   name: Attic Heating
   entities:
     - climate.attic_office_combi
     - climate.attic_office_electric
 
+# west wing temperature sensors
 west_wing:
   name: West Wing
   entities:
@@ -68,6 +72,7 @@ west_wing:
     - sensor.laundry_room_temperature
     - sensor.living_room_temperature
 
+# east wing temperature sensors
 east_wing:
   name: East Wing
   entities:
@@ -78,8 +83,28 @@ east_wing:
     - sensor.bedroom_master_temperature
     - sensor.attic_office_temperature
 
+# outbuilding temperature sensors
 outbuildings:
   name: Outbuildings
   entities:
     - sensor.greenhouse_temperature
     - sensor.tackroom_temperature
+
+# heaters
+heaters:
+  name: heaters
+  entities:
+  - switch.attic_boiler
+  - switch.attic_radiators
+  - switch.bathroom_towel_radiator
+  - switch.sebby_heater
+  - switch.greenhouse_heater
+  - switch.hot_water_immersion
+  - switch.kitchen_heater
+  - switch.laundry_heater
+  - switch.master_bedroom_heater
+  - switch.oil_boiler
+  - switch.pip_s_heater
+  - switch.seed_mat
+  - switch.shower_towel_radiator
+  - switch.tackroom_heater
