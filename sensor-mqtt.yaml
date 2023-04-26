@@ -36,6 +36,7 @@
   unit_of_measurement: "W"
   state_class: "measurement"
   device_class: "power"
+  value_template: "{{ value | int }}"
 - state_topic: "gc/power"
   name: "Garden Cottage Power"
   unit_of_measurement: "W"
