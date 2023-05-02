@@ -9,10 +9,6 @@
           "title": "Home",
           "cards": [
             {
-              "type": "entity",
-              "entity": "sensor.power"
-            },
-            {
               "type": "statistic",
               "entity": "sensor.energy_house",
               "period": {
@@ -24,20 +20,31 @@
               "name": "Energy today"
             },
             {
+              "type": "entities",
+              "entities": [
+                {
+                  "entity": "sensor.phantom_power"
+                },
+                {
+                  "entity": "sensor.group_power"
+                }
+              ]
+            },
+            {
               "type": "custom:auto-entities",
-              "card": {
-                "type": "entities"
-              },
               "filter": {
                 "include": [
                   {
-                    "group": "group.automations"
+                    "group": "group.heaters"
                   }
                 ],
                 "exclude": []
               },
               "sort": {
                 "method": "friendly_name"
+              },
+              "card": {
+                "type": "entities"
               }
             },
             {
@@ -59,19 +66,19 @@
             },
             {
               "type": "custom:auto-entities",
+              "card": {
+                "type": "entities"
+              },
               "filter": {
                 "include": [
                   {
-                    "group": "group.heaters"
+                    "group": "group.automations"
                   }
                 ],
                 "exclude": []
               },
               "sort": {
                 "method": "friendly_name"
-              },
-              "card": {
-                "type": "entities"
               }
             },
             {
@@ -282,6 +289,72 @@
               },
               "stat_type": "change",
               "name": "Energy today"
+            },
+            {
+              "type": "thermostat",
+              "entity": "climate.tow_05613c"
+            },
+            {
+              "type": "entities",
+              "entities": [
+                {
+                  "entity": "update.tow_05613c_update_available",
+                  "name": "Update Available"
+                },
+                {
+                  "entity": "sensor.tow_05613c_effective_power",
+                  "name": "Effective Power"
+                },
+                {
+                  "entity": "sensor.tow_05613c_energy_consumption",
+                  "name": "Energy Consumption"
+                }
+              ],
+              "title": "Tow. 05613C"
+            },
+            {
+              "type": "thermostat",
+              "entity": "climate.rad_7eb994_2"
+            },
+            {
+              "type": "entities",
+              "entities": [
+                {
+                  "entity": "update.rad_7eb994_update_available_2",
+                  "name": "Update Available"
+                },
+                {
+                  "entity": "sensor.rad_7eb994_effective_power_2",
+                  "name": "Effective Power"
+                },
+                {
+                  "entity": "sensor.rad_7eb994_energy_consumption_2",
+                  "name": "Energy Consumption"
+                }
+              ],
+              "title": "Rad. 7EB994"
+            },
+            {
+              "type": "thermostat",
+              "entity": "climate.rad_7eb994"
+            },
+            {
+              "type": "entities",
+              "entities": [
+                {
+                  "entity": "update.rad_7eb994_update_available",
+                  "name": "Update Available"
+                },
+                {
+                  "entity": "sensor.rad_7eb994_effective_power",
+                  "name": "Effective Power"
+                },
+                {
+                  "entity": "sensor.rad_7eb994_energy_consumption",
+                  "name": "Energy Consumption"
+                }
+              ],
+              "title": "Rad. 7EB994"
             }
           ]
         }

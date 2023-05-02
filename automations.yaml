@@ -72,35 +72,35 @@
   alias: Pip's heating on
   description: Make sure Pip's room never less than 16C
   trigger:
-  - at: '18:30'
+  - at: '18:30:00'
     platform: time
   condition: []
   action:
-  - data: {}
-    service: climate.turn_on
-    target:
-      entity_id:
-      - climate.pip_s_room
   - service: climate.set_temperature
     data:
       temperature: 16
     target:
       entity_id:
       - climate.pip_s_room
+  - service: climate.set_hvac_mode
+    data:
+      hvac_mode: heat
+    target:
+      entity_id: climate.pip_s_room_electric
   mode: single
 - id: '1583793687978'
   alias: Pip's heating off
   description: Make sure Pip's room never less than 16C
   trigger:
-  - at: 06:00
+  - at: 06:00:00
     platform: time
   condition: []
   action:
-  - data: {}
-    service: climate.turn_off
+  - service: climate.set_hvac_mode
+    data:
+      hvac_mode: 'off'
     target:
-      entity_id:
-      - climate.pip_s_room
+      entity_id: climate.pip_s_room_electric
   mode: single
 - id: '1585479851181'
   alias: Attic Heating On
@@ -167,7 +167,7 @@
   description: ''
   trigger:
   - platform: time
-    at: 07:00
+    at: 07:00:00
   - at: '21:00:00'
     platform: time
   condition: []
@@ -184,6 +184,7 @@
     device_id: c639fbc404b04062a0623a6366b1d147
     entity_id: switch.seed_mat
     domain: switch
+    enabled: false
   mode: single
 - id: '1593616611856'
   alias: Towel Radiators On
@@ -372,8 +373,9 @@
   alias: Grow light on
   description: ''
   trigger:
-  - platform: time
-    at: 06:00:00
+  - platform: sun
+    event: sunrise
+    offset: 0
   condition: []
   action:
   - type: turn_on
@@ -385,8 +387,9 @@
   alias: Grow light off
   description: ''
   trigger:
-  - platform: time
-    at: '22:00:00'
+  - platform: sun
+    event: sunset
+    offset: 0
   condition: []
   action:
   - type: turn_off
