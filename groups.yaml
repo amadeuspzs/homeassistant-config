@@ -4,7 +4,6 @@ critical:
     entities:
       - sensor.pip_temperature
       - sensor.hot_water
-      - sensor.bestie_temperature
       - sensor.attic_office_temperature
       - sensor.tackroom_temperature
       - sensor.greenhouse_temperature
