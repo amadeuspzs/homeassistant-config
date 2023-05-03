@@ -42,7 +42,8 @@ def hours_since_last_change(entity_id: str) -> float:
     FROM states 
     WHERE 
         entity_id="{entity_id}" AND
-        state !="unknown"
+        state !="unknown" AND
+        state !="unavailable"
     ORDER BY last_updated DESC 
     LIMIT {num_restarts}
     """
