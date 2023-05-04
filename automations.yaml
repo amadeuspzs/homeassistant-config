@@ -408,3 +408,20 @@
   - service: backup.create
     data: {}
   mode: single
+- id: '1683229922981'
+  alias: 'Garden Cottage next day hot water '
+  description: ''
+  trigger:
+  - platform: time
+    at: '11:00:00'
+  condition: []
+  action:
+  - type: turn_on
+    device_id: 8cff03562b97767a1fe912fc7a4feb7d
+    entity_id: switch.gc_hot_water_immersion
+    domain: switch
+  - service: automation.turn_off
+    data: {}
+    target:
+      entity_id: automation.garden_cottage_next_day_hot_water
+  mode: single

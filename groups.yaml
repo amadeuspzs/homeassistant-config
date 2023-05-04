@@ -135,3 +135,4 @@ automations:
   - automation.pip_s_heating_on
   - automation.tackroom_laundry_heating_on
   - automation.towel_radiators_on
+  - automation.garden_cottage_next_day_hot_water
