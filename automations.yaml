@@ -32,7 +32,7 @@
   trigger:
   - platform: numeric_state
     entity_id: sensor.greenhouse_temperature
-    above: 30
+    above: 32
   - platform: numeric_state
     entity_id: sensor.greenhouse_temperature
     below: 5
@@ -396,4 +396,15 @@
     device_id: 9b047ec8e83543bcb2e76130a25f0abe
     entity_id: switch.grow_light
     domain: switch
+  mode: single
+- id: '1683129319083'
+  alias: Daily backup
+  description: ''
+  trigger:
+  - platform: time
+    at: 00:00:00
+  condition: []
+  action:
+  - service: backup.create
+    data: {}
   mode: single
