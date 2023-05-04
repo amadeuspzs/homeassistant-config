@@ -409,11 +409,11 @@
     data: {}
   mode: single
 - id: '1683229922981'
-  alias: 'Garden Cottage next day hot water '
-  description: ''
+  alias: Garden Cottage next day Hot Water on
+  description: Turn on hot water in time for 2pm check in
   trigger:
   - platform: time
-    at: '11:00:00'
+    at: '12:00:00'
   condition: []
   action:
   - type: turn_on
@@ -424,4 +424,21 @@
     data: {}
     target:
       entity_id: automation.garden_cottage_next_day_hot_water
+  mode: single
+- id: '1683230239239'
+  alias: Garden Cottage next day Hot Water off
+  description: Turn off hot water at 11am checkout
+  trigger:
+  - platform: time
+    at: '11:00:00'
+  condition: []
+  action:
+  - type: turn_off
+    device_id: 8cff03562b97767a1fe912fc7a4feb7d
+    entity_id: switch.gc_hot_water_immersion
+    domain: switch
+  - service: automation.turn_off
+    data: {}
+    target:
+      entity_id: automation.garden_cottage_next_day_hot_water_off
   mode: single
