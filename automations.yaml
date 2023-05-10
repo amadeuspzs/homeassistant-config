@@ -32,7 +32,7 @@
   trigger:
   - platform: numeric_state
     entity_id: sensor.greenhouse_temperature
-    above: 32
+    above: 35
   - platform: numeric_state
     entity_id: sensor.greenhouse_temperature
     below: 5
@@ -409,7 +409,7 @@
     data: {}
   mode: single
 - id: '1683229922981'
-  alias: Garden Cottage next day Hot Water on
+  alias: Next day Hot Water on
   description: Turn on hot water in time for 2pm check in
   trigger:
   - platform: time
@@ -426,7 +426,7 @@
       entity_id: automation.garden_cottage_next_day_hot_water
   mode: single
 - id: '1683230239239'
-  alias: Garden Cottage next day Hot Water off
+  alias: Next day Hot Water off
   description: Turn off hot water at 11am checkout
   trigger:
   - platform: time

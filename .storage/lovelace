@@ -207,6 +207,17 @@
           ],
           "cards": [
             {
+              "type": "statistic",
+              "entity": "sensor.energy_garden_cottage",
+              "period": {
+                "calendar": {
+                  "period": "day"
+                }
+              },
+              "stat_type": "change",
+              "name": "Energy today"
+            },
+            {
               "type": "entities",
               "entities": [
                 {
@@ -214,6 +225,12 @@
                 },
                 {
                   "entity": "switch.gc_hot_water_immersion"
+                },
+                {
+                  "entity": "automation.garden_cottage_next_day_hot_water"
+                },
+                {
+                  "entity": "automation.garden_cottage_next_day_hot_water_off"
                 },
                 {
                   "entity": "sensor.garden_cottage_living_room_temperature"
@@ -278,17 +295,6 @@
                   "entity": "sensor.garden_cottage_power"
                 }
               ]
-            },
-            {
-              "type": "statistic",
-              "entity": "sensor.energy_garden_cottage",
-              "period": {
-                "calendar": {
-                  "period": "day"
-                }
-              },
-              "stat_type": "change",
-              "name": "Energy today"
             },
             {
               "type": "thermostat",
