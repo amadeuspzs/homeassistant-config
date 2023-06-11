@@ -36,3 +36,8 @@ These do not appear to be stored in configuration files:
 7. [Rointe integration](https://github.com/tggm/rointe-hacs)
 
 Config for sensors, where sensors are stored in `sensors.json` is generated via https://github.com/amadeuspzs/ha-config
+
+## Backups
+
+1. Daily backups through automation
+2. Remove backups older than 30 days (crontab): `find /home/homeassistant/.homeassistant/backups -type f -mtime +30 -delete`
