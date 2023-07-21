@@ -37,6 +37,13 @@ These do not appear to be stored in configuration files:
 
 Config for sensors, where sensors are stored in `sensors.json` is generated via https://github.com/amadeuspzs/ha-config
 
+## Tasmota [config](https://tasmota.github.io/docs/Commands/)
+
+1. `TelePeriod 1` == `TelePeriod 300`
+2. `PowerDelta 110` = report on 10W change
+3. `SetOption65 1` = disable reset on power cycle
+4. `SetOption19 0` = tasmota discovery, 1 = mqtt (deprecated)
+
 ## Backups
 
 1. Daily backups through automation
