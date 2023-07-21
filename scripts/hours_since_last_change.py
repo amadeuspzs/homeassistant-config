@@ -42,7 +42,8 @@ def hours_since_last_change(entity_id: str) -> float:
     FROM states 
     WHERE 
         entity_id="{entity_id}" AND
-        state !="unknown"
+        state !="unknown" AND
+        state !="unavailable"
     ORDER BY last_updated DESC 
     LIMIT {num_restarts}
     """
@@ -55,8 +56,8 @@ def hours_since_last_change(entity_id: str) -> float:
         raise Exception(f"Failed to query HA DB: {e}")
 
     try:
-        last_updated = pd.to_datetime(df.iloc[find_last_changed_index(df)].last_updated)
-        return (round((pd.Timedelta(pd.Timestamp.now() - last_updated))/pd.Timedelta('1 hour'),1))
+        last_updated = pd.to_datetime(df.iloc[find_last_changed_index(df)].last_updated,utc=True)
+        return (round((pd.Timedelta(pd.Timestamp.now(tz="utc") - last_updated))/pd.Timedelta('1 hour'),1))
     except Exception as e:
         raise Exception(f"Failed to find last state: {e}")
 

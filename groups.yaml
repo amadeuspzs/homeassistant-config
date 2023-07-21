@@ -1,14 +1,17 @@
+# sensors which control heating and need to be "live"
 critical:
     name: Critical sensors
-    # sensors which control heating and need to be "live"
     entities:
       - sensor.pip_temperature
       - sensor.hot_water
-      - sensor.attic_office_temperature
-      - sensor.tackroom_temperature
+        #- sensor.attic_office_temperature
       - sensor.greenhouse_temperature
-      - sensor.kitchen_small_temperature
-      #- sensor.water_reservoir  
+        #- sensor.kitchen_small_temperature
+        #- sensor.bedroom_master_temperature
+        #      - sensor.water_reservoir_signal 
+
+
+# smart plug energy sensors, tied to phantom calculation
 power:
     name: Power sensors
     entities:
@@ -23,7 +26,9 @@ power:
       - sensor.tackroom_heater_energy_power
       - sensor.tumble_dryer_energy_power
       - sensor.washing_machine_energy_power
+      - sensor.servers_energy_power
 
+# sensors with batteries
 batteries:
     name: Sensor batteries
     entities:
@@ -46,3 +51,88 @@ batteries:
       - sensor.pip_power
       - sensor.tackroom_power
       - sensor.white_room_power
+
+# attic heating is both combi and electric
+attic_heating:
+  name: Attic Heating
+  entities:
+    - climate.attic_office_combi
+    - climate.attic_office_electric
+
+# west wing temperature sensors
+west_wing:
+  name: West Wing
+  entities:
+    - sensor.bedroom_k_a_temperature
+    - sensor.living_room_k_a_temperature
+    - sensor.bestie_temperature
+    - sensor.pip_temperature
+    - sensor.kitchen_main_temperature
+    - sensor.kitchen_small_temperature
+    - sensor.laundry_room_temperature
+    - sensor.living_room_temperature
+
+# east wing temperature sensors
+east_wing:
+  name: East Wing
+  entities:
+    - sensor.drawing_room_temperature
+    - sensor.dining_room_temperature
+    - sensor.white_room_temperature
+    - sensor.bathroom_master_temperature
+    - sensor.bedroom_master_temperature
+    - sensor.attic_office_temperature
+
+# outbuilding temperature sensors
+outbuildings:
+  name: Outbuildings
+  entities:
+    - sensor.greenhouse_temperature
+    - sensor.tackroom_temperature
+
+# heaters
+heaters:
+  name: heaters
+  entities:
+  - switch.attic_boiler
+  - switch.attic_radiators
+  - switch.bathroom_towel_radiator
+  - switch.sebby_heater
+  - switch.greenhouse_heater
+  - switch.hot_water_immersion
+  - switch.kitchen_heater
+  - switch.laundry_heater
+  - switch.master_bedroom_heater
+  - switch.oil_boiler
+  - switch.pip_s_heater
+  - switch.seed_mat
+  - switch.shower_towel_radiator
+  - switch.tackroom_heater
+
+# thermostats
+thermostats:
+  name: thermostats
+  entities:
+  - climate.attic_office_combi
+  - climate.attic_office_electric
+  - climate.central_heating
+  - climate.greenhouse
+  - climate.hot_water_immersion
+  - climate.kitchen
+  - climate.master_bedroom
+  - climate.pip_s_room_electric
+
+# automations of interest
+automations:
+  name: automations
+  entities:
+  - automation.attic_heating_on
+  - automation.attic_visitors_weekend_on
+  - automation.grow_light_on
+  - automation.hot_water_bath_on
+  - automation.kitchen_heating_on
+  - automation.oil_boiler_on_evening
+  - automation.oil_boiler_on_morning
+  - automation.pip_s_heating_on
+  - automation.tackroom_laundry_heating_on
+  - automation.towel_radiators_on
