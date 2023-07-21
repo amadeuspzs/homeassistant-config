@@ -1,0 +1,434 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "lovelace",
+  "data": {
+    "config": {
+      "views": [
+        {
+          "title": "Home",
+          "badges": [
+            {
+              "entity": "sensor.water_reservoir_level"
+            }
+          ],
+          "cards": [
+            {
+              "type": "statistic",
+              "entity": "sensor.energy_house",
+              "period": {
+                "calendar": {
+                  "period": "day"
+                }
+              },
+              "stat_type": "change",
+              "name": "Energy today"
+            },
+            {
+              "type": "entities",
+              "entities": [
+                {
+                  "entity": "sensor.phantom_power"
+                },
+                {
+                  "entity": "sensor.group_power"
+                }
+              ]
+            },
+            {
+              "type": "custom:auto-entities",
+              "filter": {
+                "include": [
+                  {
+                    "group": "group.heaters"
+                  }
+                ],
+                "exclude": []
+              },
+              "sort": {
+                "method": "friendly_name"
+              },
+              "card": {
+                "type": "entities"
+              }
+            },
+            {
+              "type": "custom:auto-entities",
+              "filter": {
+                "include": [
+                  {
+                    "group": "group.thermostats"
+                  }
+                ],
+                "exclude": []
+              },
+              "card": {
+                "type": "entities"
+              },
+              "sort": {
+                "method": "friendly_name"
+              }
+            },
+            {
+              "type": "custom:auto-entities",
+              "card": {
+                "type": "entities"
+              },
+              "filter": {
+                "include": [
+                  {
+                    "group": "group.automations"
+                  }
+                ],
+                "exclude": []
+              },
+              "sort": {
+                "method": "friendly_name"
+              }
+            },
+            {
+              "type": "custom:auto-entities",
+              "card": {
+                "type": "entities",
+                "title": "Critical Sensors"
+              },
+              "filter": {
+                "include": [
+                  {
+                    "group": "group.critical"
+                  }
+                ]
+              },
+              "show_empty": true,
+              "sort": {
+                "method": "friendly_name"
+              }
+            },
+            {
+              "type": "custom:auto-entities",
+              "card": {
+                "type": "entities",
+                "title": "Batteries",
+                "state_color": true
+              },
+              "filter": {
+                "include": [
+                  {
+                    "group": "group.batteries"
+                  }
+                ],
+                "exclude": []
+              },
+              "sort": {
+                "method": "friendly_name"
+              }
+            },
+            {
+              "type": "custom:auto-entities",
+              "filter": {
+                "include": [
+                  {
+                    "group": "group.heaters"
+                  }
+                ],
+                "exclude": []
+              },
+              "card": {
+                "type": "history-graph",
+                "title": "Heaters"
+              },
+              "sort": {
+                "method": "friendly_name"
+              }
+            },
+            {
+              "type": "custom:auto-entities",
+              "filter": {
+                "include": [
+                  {
+                    "group": "group.west_wing"
+                  }
+                ],
+                "exclude": []
+              },
+              "card": {
+                "type": "history-graph",
+                "title": "West Wing"
+              },
+              "sort": {
+                "method": "friendly_name",
+                "ignore_case": false
+              }
+            },
+            {
+              "type": "custom:auto-entities",
+              "filter": {
+                "include": [
+                  {
+                    "group": "group.east_wing"
+                  }
+                ],
+                "exclude": []
+              },
+              "card": {
+                "type": "history-graph",
+                "title": "East Wing"
+              }
+            },
+            {
+              "type": "custom:auto-entities",
+              "filter": {
+                "include": [
+                  {
+                    "group": "group.outbuildings"
+                  }
+                ],
+                "exclude": []
+              },
+              "card": {
+                "type": "history-graph",
+                "title": "Outbuildings"
+              }
+            }
+          ]
+        },
+        {
+          "theme": "Backend-selected",
+          "title": "GC",
+          "path": "gc",
+          "badges": [
+            {
+              "entity": "sensor.garden_cottage_living_room_temperature"
+            },
+            {
+              "entity": "sensor.garden_cottage_bedroom_temperature"
+            },
+            {
+              "entity": "sensor.garden_cottage_bathroom_temperature"
+            },
+            {
+              "entity": "switch.gc_hot_water_immersion"
+            }
+          ],
+          "cards": [
+            {
+              "type": "statistic",
+              "entity": "sensor.energy_garden_cottage",
+              "period": {
+                "calendar": {
+                  "period": "day"
+                }
+              },
+              "stat_type": "change",
+              "name": "Energy today"
+            },
+            {
+              "type": "entities",
+              "entities": [
+                {
+                  "entity": "sensor.garden_cottage_power"
+                },
+                {
+                  "entity": "switch.gc_hot_water_immersion"
+                },
+                {
+                  "entity": "automation.garden_cottage_next_day_hot_water"
+                },
+                {
+                  "entity": "automation.garden_cottage_next_day_hot_water_off"
+                },
+                {
+                  "entity": "sensor.garden_cottage_living_room_temperature"
+                },
+                {
+                  "entity": "sensor.garden_cottage_bedroom_temperature"
+                },
+                {
+                  "entity": "sensor.garden_cottage_bathroom_temperature"
+                },
+                {
+                  "entity": "sensor.garden_cottage_living_room_power"
+                },
+                {
+                  "entity": "sensor.garden_cottage_bedroom_power"
+                },
+                {
+                  "entity": "sensor.garden_cottage_bathroom_power"
+                }
+              ]
+            },
+            {
+              "type": "history-graph",
+              "entities": [
+                {
+                  "entity": "sensor.garden_cottage_living_room_temperature"
+                },
+                {
+                  "entity": "sensor.garden_cottage_bedroom_temperature"
+                },
+                {
+                  "entity": "sensor.garden_cottage_bathroom_temperature"
+                },
+                {
+                  "entity": "sensor.garden_cottage_living_room_humidity"
+                },
+                {
+                  "entity": "sensor.garden_cottage_bedroom_humidity"
+                },
+                {
+                  "entity": "sensor.garden_cottage_bathroom_humidity"
+                }
+              ],
+              "hours_to_show": 48
+            },
+            {
+              "type": "history-graph",
+              "entities": [
+                {
+                  "entity": "sensor.garden_cottage_hot_water_1_3"
+                },
+                {
+                  "entity": "sensor.garden_cottage_hot_water_outlet"
+                }
+              ],
+              "hours_to_show": 24
+            },
+            {
+              "type": "history-graph",
+              "entities": [
+                {
+                  "entity": "sensor.garden_cottage_power"
+                }
+              ]
+            },
+            {
+              "type": "thermostat",
+              "entity": "climate.tow_05613c"
+            },
+            {
+              "type": "entities",
+              "entities": [
+                {
+                  "entity": "update.tow_05613c_update_available",
+                  "name": "Update Available"
+                },
+                {
+                  "entity": "sensor.tow_05613c_effective_power",
+                  "name": "Effective Power"
+                },
+                {
+                  "entity": "sensor.tow_05613c_energy_consumption",
+                  "name": "Energy Consumption"
+                }
+              ],
+              "title": "Tow. 05613C"
+            },
+            {
+              "type": "thermostat",
+              "entity": "climate.rad_7eb994_2"
+            },
+            {
+              "type": "entities",
+              "entities": [
+                {
+                  "entity": "update.rad_7eb994_update_available_2",
+                  "name": "Update Available"
+                },
+                {
+                  "entity": "sensor.rad_7eb994_effective_power_2",
+                  "name": "Effective Power"
+                },
+                {
+                  "entity": "sensor.rad_7eb994_energy_consumption_2",
+                  "name": "Energy Consumption"
+                }
+              ],
+              "title": "Rad. 7EB994"
+            },
+            {
+              "type": "thermostat",
+              "entity": "climate.rad_7eb994"
+            },
+            {
+              "type": "entities",
+              "entities": [
+                {
+                  "entity": "update.rad_7eb994_update_available",
+                  "name": "Update Available"
+                },
+                {
+                  "entity": "sensor.rad_7eb994_effective_power",
+                  "name": "Effective Power"
+                },
+                {
+                  "entity": "sensor.rad_7eb994_energy_consumption",
+                  "name": "Energy Consumption"
+                }
+              ],
+              "title": "Rad. 7EB994"
+            }
+          ]
+        },
+        {
+          "theme": "Backend-selected",
+          "title": "Power",
+          "path": "power",
+          "icon": "mdi:home-lightning-bolt",
+          "badges": [],
+          "cards": [
+            {
+              "type": "history-graph",
+              "entities": [
+                {
+                  "entity": "sensor.sebby_heater_energy_power"
+                },
+                {
+                  "entity": "sensor.greenhouse_heater_energy_power"
+                },
+                {
+                  "entity": "sensor.kitchen_heater_energy_power"
+                },
+                {
+                  "entity": "sensor.main_dishwasher_energy_power"
+                },
+                {
+                  "entity": "sensor.laundry_heater_energy_power"
+                },
+                {
+                  "entity": "sensor.master_bedroom_heater_energy_power"
+                },
+                {
+                  "entity": "sensor.pip_s_heater_energy_power"
+                },
+                {
+                  "entity": "sensor.small_dishwasher_energy_power"
+                },
+                {
+                  "entity": "sensor.tackroom_heater_energy_power"
+                },
+                {
+                  "entity": "sensor.tumble_dryer_energy_power"
+                },
+                {
+                  "entity": "sensor.washing_machine_energy_power"
+                },
+                {
+                  "entity": "sensor.group_power"
+                },
+                {
+                  "entity": "sensor.phantom_power"
+                },
+                {
+                  "entity": "sensor.power"
+                },
+                {
+                  "entity": "sensor.servers_energy_power"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

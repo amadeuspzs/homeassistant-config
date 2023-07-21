@@ -30,5 +30,21 @@ These do not appear to be stored in configuration files:
 1. User configuration
 2. MQTT integration
 3. Tasmota integration
+4. [HACS](https://hacs.xyz/docs/setup/download)
+5. [Lovelace auto-entities](https://github.com/thomasloven/lovelace-auto-entities)
+6. Naming of some entities e.g. attic radiators
+7. [Rointe integration](https://github.com/tggm/rointe-hacs)
 
 Config for sensors, where sensors are stored in `sensors.json` is generated via https://github.com/amadeuspzs/ha-config
+
+## Tasmota [config](https://tasmota.github.io/docs/Commands/)
+
+1. `TelePeriod 1` == `TelePeriod 300`
+2. `PowerDelta 110` = report on 10W change
+3. `SetOption65 1` = disable reset on power cycle
+4. `SetOption19 0` = tasmota discovery, 1 = mqtt (deprecated)
+
+## Backups
+
+1. Daily backups through automation
+2. Remove backups older than 30 days (crontab): `find /home/homeassistant/.homeassistant/backups -type f -mtime +30 -delete`
