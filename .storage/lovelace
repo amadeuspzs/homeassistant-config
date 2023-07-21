@@ -7,6 +7,11 @@
       "views": [
         {
           "title": "Home",
+          "badges": [
+            {
+              "entity": "sensor.water_reservoir_level"
+            }
+          ],
           "cards": [
             {
               "type": "statistic",
@@ -361,6 +366,65 @@
                 }
               ],
               "title": "Rad. 7EB994"
+            }
+          ]
+        },
+        {
+          "theme": "Backend-selected",
+          "title": "Power",
+          "path": "power",
+          "icon": "mdi:home-lightning-bolt",
+          "badges": [],
+          "cards": [
+            {
+              "type": "history-graph",
+              "entities": [
+                {
+                  "entity": "sensor.sebby_heater_energy_power"
+                },
+                {
+                  "entity": "sensor.greenhouse_heater_energy_power"
+                },
+                {
+                  "entity": "sensor.kitchen_heater_energy_power"
+                },
+                {
+                  "entity": "sensor.main_dishwasher_energy_power"
+                },
+                {
+                  "entity": "sensor.laundry_heater_energy_power"
+                },
+                {
+                  "entity": "sensor.master_bedroom_heater_energy_power"
+                },
+                {
+                  "entity": "sensor.pip_s_heater_energy_power"
+                },
+                {
+                  "entity": "sensor.small_dishwasher_energy_power"
+                },
+                {
+                  "entity": "sensor.tackroom_heater_energy_power"
+                },
+                {
+                  "entity": "sensor.tumble_dryer_energy_power"
+                },
+                {
+                  "entity": "sensor.washing_machine_energy_power"
+                },
+                {
+                  "entity": "sensor.group_power"
+                },
+                {
+                  "entity": "sensor.phantom_power"
+                },
+                {
+                  "entity": "sensor.power"
+                },
+                {
+                  "entity": "sensor.servers_energy_power"
+                }
+              ]
             }
           ]
         }

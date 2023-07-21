@@ -442,3 +442,16 @@
     target:
       entity_id: automation.garden_cottage_next_day_hot_water_off
   mode: single
+- id: '1686056027423'
+  alias: 'Kitchen heating off '
+  description: 'Overnight '
+  trigger:
+  - platform: time
+    at: '22:00:00'
+  condition: []
+  action:
+  - type: turn_off
+    device_id: 290df197749152de98dfc5ea00c9c21c
+    entity_id: switch.kitchen_heater
+    domain: switch
+  mode: single
