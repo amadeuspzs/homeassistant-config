@@ -78,7 +78,8 @@
   action:
   - service: climate.set_temperature
     data:
-      temperature: 16
+      temperature: 15
+      hvac_mode: heat
     target:
       entity_id:
       - climate.pip_s_room
@@ -151,7 +152,7 @@
   description: ''
   trigger:
   - platform: time
-    at: 05:30:00
+    at: 05:00:00
   condition: []
   action:
   - data: {}
@@ -167,7 +168,7 @@
   description: ''
   trigger:
   - platform: time
-    at: 07:00:00
+    at: 06:00:00
   - at: '21:00:00'
     platform: time
   condition: []
@@ -187,10 +188,10 @@
     enabled: false
   mode: single
 - id: '1593616611856'
-  alias: Towel Radiators On
+  alias: Shower Towel Radiator On
   description: Switch on twice a day
   trigger:
-  - at: '6:30:00'
+  - at: 06:30:00
     platform: time
   - platform: time
     at: '18:30:00'
@@ -199,10 +200,6 @@
   - type: turn_on
     device_id: cf9a6fd56a6e479083dd8a009009d843
     entity_id: switch.shower_towel_radiator
-    domain: switch
-  - type: turn_on
-    device_id: 4bc7db6c1e3ea691424de81704d011b1
-    entity_id: switch.bathroom_towel_radiator
     domain: switch
   mode: single
 - id: '1595402424113'
@@ -296,6 +293,11 @@
     device_id: c639fbc404b04062a0623a6366b1d147
     entity_id: switch.seed_mat
     domain: switch
+  - service: climate.set_temperature
+    data:
+      temperature: 17
+    target:
+      entity_id: climate.central_heating
   mode: single
 - id: '1634585277038'
   alias: Tackroom & Laundry Heating On
@@ -408,50 +410,18 @@
   - service: backup.create
     data: {}
   mode: single
-- id: '1683229922981'
-  alias: Next day Hot Water on
-  description: Turn on hot water in time for 2pm check in
+- id: '1698613478089'
+  alias: Bathroom towel radiator on
+  description: Switch on twice a day
   trigger:
+  - at: 06:30:00
+    platform: time
   - platform: time
-    at: '12:00:00'
+    at: '18:30:00'
   condition: []
   action:
   - type: turn_on
-    device_id: 8cff03562b97767a1fe912fc7a4feb7d
-    entity_id: switch.gc_hot_water_immersion
-    domain: switch
-  - service: automation.turn_off
-    data: {}
-    target:
-      entity_id: automation.garden_cottage_next_day_hot_water
-  mode: single
-- id: '1683230239239'
-  alias: Next day Hot Water off
-  description: Turn off hot water at 11am checkout
-  trigger:
-  - platform: time
-    at: '11:00:00'
-  condition: []
-  action:
-  - type: turn_off
-    device_id: 8cff03562b97767a1fe912fc7a4feb7d
-    entity_id: switch.gc_hot_water_immersion
-    domain: switch
-  - service: automation.turn_off
-    data: {}
-    target:
-      entity_id: automation.garden_cottage_next_day_hot_water_off
-  mode: single
-- id: '1686056027423'
-  alias: 'Kitchen heating off '
-  description: 'Overnight '
-  trigger:
-  - platform: time
-    at: '22:00:00'
-  condition: []
-  action:
-  - type: turn_off
-    device_id: 290df197749152de98dfc5ea00c9c21c
-    entity_id: switch.kitchen_heater
+    device_id: 4bc7db6c1e3ea691424de81704d011b1
+    entity_id: switch.bathroom_towel_radiator
     domain: switch
   mode: single

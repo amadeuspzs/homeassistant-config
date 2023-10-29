@@ -27,7 +27,14 @@ power:
       - sensor.tumble_dryer_energy_power
       - sensor.washing_machine_energy_power
       - sensor.servers_energy_power
-
+      - sensor.fridge_guest_energy_power
+      - sensor.fridge_freezer_energy_power
+      - sensor.fridge_small_energy_power
+      - sensor.freezer_energy_power
+      - sensor.attic_ups_energy_power 
+      - sensor.roaming_energy_power
+      - sensor.fridge_energy_power
+ 
 # sensors with batteries
 batteries:
     name: Sensor batteries
@@ -136,3 +143,4 @@ automations:
   - automation.pip_s_heating_on
   - automation.tackroom_laundry_heating_on
   - automation.towel_radiators_on
+  - automation.bathroom_towel_radiator
