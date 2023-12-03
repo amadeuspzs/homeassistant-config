@@ -116,6 +116,31 @@
   precision: 0.1
   hot_tolerance: 0.0
   initial_hvac_mode: "off"
+- platform: generic_thermostat
+  name: Attic Bedroom (Kitty)
+  heater: switch.attic_radiators
+  target_sensor: sensor.attic_bedroom_kitty_temperature
+  min_temp: 15
+  max_temp: 20
+  target_temp: 18
+  min_cycle_duration:
+    minutes: 15
+  precision: 0.1
+  hot_tolerance: 0.0
+  initial_hvac_mode: "off"
+- platform: generic_thermostat
+  name: Attic Bedroom (Nicholas)
+  heater: switch.attic_radiators
+  target_sensor: sensor.attic_bedroom_nicholas_temperature
+  min_temp: 15
+  max_temp: 20
+  target_temp: 18
+  min_cycle_duration:
+    minutes: 15
+  precision: 0.1
+  hot_tolerance: 0.0
+  initial_hvac_mode: "off"
+
 # - platform: generic_thermostat
 #   name: Sebby Electric
 #   heater: switch.sebby_heater

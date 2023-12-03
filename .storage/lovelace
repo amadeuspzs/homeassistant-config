@@ -188,6 +188,21 @@
                 "type": "history-graph",
                 "title": "Outbuildings"
               }
+            },
+            {
+              "type": "custom:auto-entities",
+              "filter": {
+                "include": [
+                  {
+                    "group": "group.attics"
+                  }
+                ],
+                "exclude": []
+              },
+              "card": {
+                "type": "history-graph",
+                "title": "Attics"
+              }
             }
           ]
         },
@@ -396,6 +411,17 @@
               "sort": {
                 "method": "friendly_name"
               }
+            },
+            {
+              "type": "entities",
+              "entities": [
+                {
+                  "entity": "sensor.greenhouse_heater_energy_today"
+                },
+                {
+                  "entity": "sensor.greenhouse_heater_energy_yesterday"
+                }
+              ]
             }
           ]
         }

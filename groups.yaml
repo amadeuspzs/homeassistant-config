@@ -40,6 +40,8 @@ batteries:
     name: Sensor batteries
     entities:
       - sensor.attic_office_power
+      - sensor.attic_bedroom_kitty_power
+      - sensor.attic_bedroom_nicholas_power
       - sensor.bathroom_master_power
       - sensor.bedroom_k_a_power
       - sensor.bedroom_master_power
@@ -88,7 +90,13 @@ east_wing:
     - sensor.white_room_temperature
     - sensor.bathroom_master_temperature
     - sensor.bedroom_master_temperature
+
+attics:
+  name: Attics
+  entities:
     - sensor.attic_office_temperature
+    - sensor.attic_bedroom_kitty_temperature
+    - sensor.attic_bedroom_nicholas_temperature
 
 # outbuilding temperature sensors
 outbuildings:
@@ -128,6 +136,8 @@ thermostats:
   - climate.kitchen
   - climate.master_bedroom
   - climate.pip_s_room_electric
+  - climate.attic_bedroom_kitty
+  - climate.attic_bedroom_nicholas
 
 # automations of interest
 automations:

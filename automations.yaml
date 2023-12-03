@@ -35,7 +35,7 @@
     above: 35
   - platform: numeric_state
     entity_id: sensor.greenhouse_temperature
-    below: 5
+    below: 4.5
   condition: []
   action:
   - service: notify.notify
@@ -78,11 +78,9 @@
   action:
   - service: climate.set_temperature
     data:
-      temperature: 15
-      hvac_mode: heat
+      temperature: 16
     target:
-      entity_id:
-      - climate.pip_s_room
+      entity_id: climate.pip_s_room_electric
   - service: climate.set_hvac_mode
     data:
       hvac_mode: heat
@@ -295,7 +293,7 @@
     domain: switch
   - service: climate.set_temperature
     data:
-      temperature: 17
+      temperature: 18
     target:
       entity_id: climate.central_heating
   mode: single
@@ -334,42 +332,43 @@
     domain: switch
   mode: single
 - id: '1636110238201'
-  alias: Attic Visitors Weekend on
+  alias: Attic Bedrooms On
   description: ''
   trigger:
   - platform: time
     at: '18:00:00'
   - platform: time
-    at: 05:00:00
+    at: 06:00:00
   condition: []
   action:
   - type: turn_on
     device_id: 761ef68fa54a4a7881f7be9a21a8f431
     entity_id: switch.attic_boiler
     domain: switch
-  - type: turn_on
-    device_id: 761ef68fa54a4a7881f7be9a21a8f431
-    entity_id: switch.attic_radiators
-    domain: switch
+  - service: climate.turn_on
+    data: {}
+    target:
+      entity_id: climate.attic_bedroom_kitty
   mode: single
 - id: '1636110308988'
-  alias: Attic Visitors Weekend off
+  alias: Attic Bedroom Off
   description: ''
   trigger:
   - platform: time
-    at: '23:00:00'
+    at: '22:00:00'
   - platform: time
-    at: 09:00:00
+    at: 08:00:00
   condition: []
   action:
-  - type: turn_off
-    device_id: 761ef68fa54a4a7881f7be9a21a8f431
-    entity_id: switch.attic_radiators
-    domain: switch
+  - service: climate.turn_off
+    data: {}
+    target:
+      entity_id: climate.attic_bedroom_kitty
   - type: turn_off
     device_id: 761ef68fa54a4a7881f7be9a21a8f431
     entity_id: switch.attic_boiler
     domain: switch
+    enabled: true
   mode: single
 - id: '1676556187794'
   alias: Grow light on

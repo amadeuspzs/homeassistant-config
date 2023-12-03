@@ -183,3 +183,19 @@
       unit_of_measurement: "%"
       value_template: "{% set power = (100* (( states('sensor.attic_office_battery') | float - 3.0) / 1.2)) | round(1) %} {{ power if power <= 100 else 100 }}"
       device_class: battery
+
+- platform: template
+  sensors:
+    attic_bedroom_kitty_power:
+      friendly_name: "Attic Bedroom (Kitty) Power"
+      unit_of_measurement: "%"
+      value_template: "{% set power = (100* (( states('sensor.attic_bedroom_kitty_battery') | float - 3.0) / 1.2)) | round(1) %} {{ power if power <= 100 else 100 }}"
+      device_class: battery
+
+- platform: template
+  sensors:
+    attic_bedroom_nicholas_power:
+      friendly_name: "Attic Bedroom (Nicholas) Power"
+      unit_of_measurement: "%"
+      value_template: "{% set power = (100* (( states('sensor.attic_bedroom_nicholas_battery') | float - 3.0) / 1.2)) | round(1) %} {{ power if power <= 100 else 100 }}"
+      device_class: battery
