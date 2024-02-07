@@ -1,0 +1,18 @@
+boost_central_heating:
+  alias: Boost central heating
+  sequence:
+  - type: turn_on
+    device_id: 60eb31efb9753c8366698e6338f076b9
+    entity_id: switch.oil_boiler
+    domain: switch
+  - delay:
+      hours: 0
+      minutes: 30
+      seconds: 0
+      milliseconds: 0
+  - type: turn_off
+    device_id: 60eb31efb9753c8366698e6338f076b9
+    entity_id: switch.oil_boiler
+    domain: switch
+  mode: single
+  icon: mdi:radiator

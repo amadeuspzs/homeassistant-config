@@ -35,7 +35,7 @@
     above: 35
   - platform: numeric_state
     entity_id: sensor.greenhouse_temperature
-    below: 4.5
+    below: 2.5
   condition: []
   action:
   - service: notify.notify
@@ -101,50 +101,6 @@
     target:
       entity_id: climate.pip_s_room_electric
   mode: single
-- id: '1585479851181'
-  alias: Attic Heating On
-  description: Monday - Thursday
-  trigger:
-  - at: 08:00
-    platform: time
-  condition:
-  - condition: time
-    weekday:
-    - mon
-    - tue
-    - wed
-    - thu
-  action:
-  - type: turn_on
-    device_id: 761ef68fa54a4a7881f7be9a21a8f431
-    entity_id: switch.attic_boiler
-    domain: switch
-  - service: homeassistant.turn_on
-    target:
-      entity_id: group.attic_heating
-  mode: single
-- id: '1585479910387'
-  alias: Attic Heating Off (MTWT)
-  description: ''
-  trigger:
-  - at: '17:15'
-    platform: time
-  condition:
-  - condition: time
-    weekday:
-    - mon
-    - tue
-    - wed
-    - thu
-  action:
-  - service: homeassistant.turn_off
-    target:
-      entity_id: group.attic_heating
-  - type: turn_off
-    device_id: 761ef68fa54a4a7881f7be9a21a8f431
-    entity_id: switch.attic_boiler
-    domain: switch
-  mode: single
 - id: '1589031338739'
   alias: Oil Boiler On (Morning)
   description: ''
@@ -166,9 +122,11 @@
   description: ''
   trigger:
   - platform: time
-    at: 06:00:00
+    at: 07:00:00
   - at: '21:00:00'
     platform: time
+  - platform: time
+    at: '23:00:00'
   condition: []
   action:
   - data: {}
@@ -266,9 +224,9 @@
   alias: Kitchen Heating Off
   description: ''
   trigger:
-  - at: 09:00
+  - at: '10:00:00'
     platform: time
-  - at: '20:00'
+  - at: '21:00:00'
     platform: time
   condition: []
   action:
@@ -423,4 +381,68 @@
     device_id: 4bc7db6c1e3ea691424de81704d011b1
     entity_id: switch.bathroom_towel_radiator
     domain: switch
+  mode: single
+- id: '1704662867334'
+  alias: Attic Office On MWT
+  description: ''
+  trigger:
+  - platform: time
+    at: 07:00:00
+  condition:
+  - condition: time
+    before: 00:00:00
+    weekday:
+    - mon
+    - wed
+    - thu
+    after: 00:00:00
+  action:
+  - type: turn_on
+    device_id: b95c170b143c59888e870925d34cc224
+    entity_id: switch.attic_boiler
+    domain: switch
+    enabled: false
+  - service: climate.turn_on
+    data: {}
+    target:
+      entity_id: climate.attic_office_combi
+    enabled: false
+  - service: climate.set_temperature
+    data:
+      temperature: 18.5
+    target:
+      entity_id: climate.attic_office_combi
+  mode: single
+- id: '1704662934298'
+  alias: Attic Office Off MTWTF
+  description: ''
+  trigger:
+  - platform: time
+    at: '17:15:00'
+  condition:
+  - condition: time
+    before: 00:00:00
+    weekday:
+    - mon
+    - wed
+    - tue
+    - thu
+    - fri
+    after: 00:00:00
+  action:
+  - service: climate.turn_off
+    data: {}
+    target:
+      entity_id: climate.attic_office_combi
+    enabled: false
+  - type: turn_off
+    device_id: b95c170b143c59888e870925d34cc224
+    entity_id: switch.attic_boiler
+    domain: switch
+    enabled: false
+  - service: climate.set_temperature
+    data:
+      temperature: 12
+    target:
+      entity_id: climate.attic_office_combi
   mode: single

@@ -50,7 +50,7 @@
   name: Attic Office Combi
   heater: switch.attic_radiators
   target_sensor: sensor.attic_office_temperature
-  min_temp: 15
+  min_temp: 12
   max_temp: 20
   target_temp: 18
   min_cycle_duration:
@@ -110,12 +110,12 @@
   target_sensor: sensor.greenhouse_temperature
   min_temp: 0 
   max_temp: 15
-  target_temp: 2.5 
+  target_temp: 5.0
   min_cycle_duration:
     minutes: 10
   precision: 0.1
   hot_tolerance: 0.0
-  initial_hvac_mode: "off"
+  initial_hvac_mode: "heat"
 - platform: generic_thermostat
   name: Attic Bedroom (Kitty)
   heater: switch.attic_radiators
@@ -141,15 +141,15 @@
   hot_tolerance: 0.0
   initial_hvac_mode: "off"
 
-# - platform: generic_thermostat
-#   name: Sebby Electric
-#   heater: switch.sebby_heater
-#   target_sensor: sensor.living_room_k_a_temperature
-#   min_temp: 12 
-#   max_temp: 20
-#   target_temp: 18 
-#   min_cycle_duration:
-#     minutes: 10
-#   precision: 0.1
-#   hot_tolerance: 0.0
-
+- platform: generic_thermostat
+  name: Bestie Electric
+  heater: switch.bestie_heater
+  target_sensor: sensor.bestie_temperature
+  min_temp: 12 
+  max_temp: 20
+  target_temp: 18 
+  min_cycle_duration:
+    minutes: 10
+  precision: 0.1
+  hot_tolerance: 0.0
+  initial_hvac_mode: "off"

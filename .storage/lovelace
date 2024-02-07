@@ -10,6 +10,20 @@
           "badges": [],
           "cards": [
             {
+              "type": "entities",
+              "entities": [
+                {
+                  "entity": "sensor.power"
+                },
+                {
+                  "entity": "sensor.group_power"
+                },
+                {
+                  "entity": "sensor.phantom_power"
+                }
+              ]
+            },
+            {
               "type": "statistic",
               "entity": "sensor.energy_house",
               "period": {
@@ -23,15 +37,7 @@
             {
               "type": "entities",
               "entities": [
-                {
-                  "entity": "sensor.power"
-                },
-                {
-                  "entity": "sensor.group_power"
-                },
-                {
-                  "entity": "sensor.phantom_power"
-                }
+                "script.boost_central_heating"
               ]
             },
             {
@@ -385,6 +391,24 @@
           "badges": [],
           "cards": [
             {
+              "type": "custom:auto-entities",
+              "filter": {
+                "include": [
+                  {
+                    "group": "group.power"
+                  }
+                ],
+                "exclude": []
+              },
+              "card": {
+                "type": "entities",
+                "title": "Realtime power"
+              },
+              "sort": {
+                "method": "friendly_name"
+              }
+            },
+            {
               "type": "history-graph",
               "entities": [
                 {
@@ -400,28 +424,18 @@
               "filter": {
                 "include": [
                   {
-                    "group": "group.power"
+                    "group": "group.energy_yesterday"
                   }
                 ],
                 "exclude": []
               },
               "card": {
-                "type": "entities"
+                "type": "entities",
+                "title": "Yesterday's usage"
               },
               "sort": {
                 "method": "friendly_name"
               }
-            },
-            {
-              "type": "entities",
-              "entities": [
-                {
-                  "entity": "sensor.greenhouse_heater_energy_today"
-                },
-                {
-                  "entity": "sensor.greenhouse_heater_energy_yesterday"
-                }
-              ]
             }
           ]
         }
