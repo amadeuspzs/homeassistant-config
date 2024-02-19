@@ -37,7 +37,15 @@
             {
               "type": "entities",
               "entities": [
-                "script.boost_central_heating"
+                {
+                  "entity": "script.boost_central_heating"
+                },
+                {
+                  "entity": "script.rosalind_staying"
+                },
+                {
+                  "entity": "script.rosalind_leaving"
+                }
               ]
             },
             {
@@ -436,6 +444,36 @@
               "sort": {
                 "method": "friendly_name"
               }
+            }
+          ]
+        },
+        {
+          "theme": "Backend-selected",
+          "title": "Testing",
+          "path": "testing",
+          "badges": [],
+          "cards": [
+            {
+              "type": "history-graph",
+              "entities": [
+                {
+                  "entity": "sensor.attic_office_temperature"
+                },
+                {
+                  "entity": "sensor.attic_office_temperature_mains"
+                }
+              ]
+            },
+            {
+              "type": "entities",
+              "entities": [
+                {
+                  "entity": "sensor.attic_office_temperature"
+                },
+                {
+                  "entity": "sensor.attic_office_temperature_mains"
+                }
+              ]
             }
           ]
         }

@@ -16,3 +16,27 @@ boost_central_heating:
     domain: switch
   mode: single
   icon: mdi:radiator
+rosalind_staying:
+  alias: Rosalind staying
+  sequence:
+  - service: automation.turn_on
+    data: {}
+    target:
+      entity_id:
+      - automation.master_bedroom_heater_on
+      - automation.central_heating_morning_boost
+      - automation.kitchen_heating_on
+  mode: single
+  icon: mdi:home-account
+rosalind_leaving:
+  alias: Rosalind leaving
+  sequence:
+  - service: automation.turn_off
+    data: {}
+    target:
+      entity_id:
+      - automation.master_bedroom_heater_on
+      - automation.kitchen_heating_on
+      - automation.central_heating_morning_boost
+  mode: single
+  icon: mdi:home-account

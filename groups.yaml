@@ -8,7 +8,7 @@ critical:
       - sensor.greenhouse_temperature
       - sensor.kitchen_small_temperature
       - sensor.bedroom_master_temperature
-        #      - sensor.water_reservoir_signal 
+      #- sensor.water_reservoir_signal 
 
 
 # smart plug energy sensors, tied to phantom calculation
@@ -85,7 +85,7 @@ energy_yesterday:
 batteries:
     name: Sensor batteries
     entities:
-      - sensor.attic_office_power
+      # - sensor.attic_office_power
       - sensor.attic_bedroom_kitty_power
       - sensor.attic_bedroom_nicholas_power
       - sensor.bathroom_master_power
@@ -191,14 +191,16 @@ automations:
   name: automations
   entities:
   - automation.attic_office_mwt
+  - automation.attic_office_t
   - automation.attic_visitors_weekend_on
-  - automation.grow_light_on
+  # - automation.grow_light_on
   - automation.hot_water_bath_on
   - automation.kitchen_heating_on
   - automation.oil_boiler_on_evening
   - automation.oil_boiler_on_morning
-  - automation.oil_boiler_off
   - automation.pip_s_heating_on
   - automation.tackroom_laundry_heating_on
   - automation.towel_radiators_on
   - automation.bathroom_towel_radiator
+  - automation.master_bedroom_heater_on
+  - automation.central_heating_morning_boost

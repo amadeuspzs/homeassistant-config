@@ -310,6 +310,11 @@
   unit_of_measurement: "V"
   device_class: "voltage"
 
+- state_topic: "attic/office/mains/temperature"
+  name: "Attic Office Temperature (Mains)"
+  unit_of_measurement: "°C"
+  device_class: "temperature"
+  state_class: "measurement"
 - state_topic: "attic/office/temperature"
   name: "Attic Office Temperature"
   unit_of_measurement: "°C"

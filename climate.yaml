@@ -52,7 +52,7 @@
   target_sensor: sensor.attic_office_temperature
   min_temp: 12
   max_temp: 20
-  target_temp: 18
+  target_temp: 18.5
   min_cycle_duration:
     minutes: 15
   precision: 0.1
