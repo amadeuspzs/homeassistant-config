@@ -5,7 +5,7 @@ critical:
       - sensor.pip_temperature
       - sensor.hot_water
       - sensor.attic_office_temperature
-      - sensor.greenhouse_temperature
+        #- sensor.greenhouse_temperature
       - sensor.kitchen_small_temperature
       - sensor.bedroom_master_temperature
       #- sensor.water_reservoir_signal 
@@ -97,13 +97,13 @@ batteries:
       - sensor.garden_cottage_bathroom_power
       - sensor.garden_cottage_bedroom_power
       - sensor.garden_cottage_living_room_power
-      - sensor.greenhouse_power
+      #- sensor.greenhouse_power
       - sensor.kitchen_main_power
       - sensor.kitchen_small_power
       - sensor.laundry_room_power
       - sensor.living_room_k_a_power
       - sensor.living_room_power
-      - sensor.pip_power
+      #- sensor.pip_power
       - sensor.tackroom_power
       - sensor.white_room_power
 
@@ -166,6 +166,7 @@ heaters:
   - switch.master_bedroom_heater
   - switch.oil_boiler
   - switch.pip_s_heater
+  - switch.grow_light
   - switch.seed_mat
   - switch.shower_towel_radiator
   - switch.tackroom_heater
@@ -190,10 +191,13 @@ thermostats:
 automations:
   name: automations
   entities:
-  - automation.attic_office_mwt
-  - automation.attic_office_t
+  - automation.attic_office_on_mon
+  - automation.attic_office_on_tue
+  - automation.attic_office_on_wed
+  - automation.attic_office_on_thu
+  - automation.attic_office_on_fri
   - automation.attic_visitors_weekend_on
-  # - automation.grow_light_on
+  - automation.grow_light_on
   - automation.hot_water_bath_on
   - automation.kitchen_heating_on
   - automation.oil_boiler_on_evening
@@ -204,3 +208,4 @@ automations:
   - automation.bathroom_towel_radiator
   - automation.master_bedroom_heater_on
   - automation.central_heating_morning_boost
+  - automation.bestie_heating_on

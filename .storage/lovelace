@@ -38,6 +38,12 @@
               "type": "entities",
               "entities": [
                 {
+                  "entity": "script.attic_office_15"
+                },
+                {
+                  "entity": "script.attic_office_12"
+                },
+                {
                   "entity": "script.boost_central_heating"
                 },
                 {
@@ -96,7 +102,11 @@
                 "exclude": []
               },
               "sort": {
-                "method": "friendly_name"
+                "method": "friendly_name",
+                "ignore_case": false,
+                "reverse": false,
+                "numeric": false,
+                "ip": false
               }
             },
             {
