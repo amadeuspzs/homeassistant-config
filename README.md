@@ -39,10 +39,12 @@ Config for sensors, where sensors are stored in `sensors.json` is generated via 
 
 ## Tasmota [config](https://tasmota.github.io/docs/Commands/)
 
-1. `TelePeriod 1` == `TelePeriod 300`
+1. Friendly Name 1 == Device Name
+2. Friendly Name 2 == Switch Name
+<!--1. `TelePeriod 1` == `TelePeriod 300` -->
 2. `PowerDelta 110` = report on 10W change
 3. `SetOption65 1` = disable reset on power cycle
-4. `SetOption19 0` = tasmota discovery, 1 = mqtt (deprecated)
+<!--4. `SetOption19 0` = tasmota discovery, 1 = mqtt (deprecated)-->
 
 Latch timer for "boosts":
 
