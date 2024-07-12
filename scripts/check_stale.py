@@ -14,7 +14,7 @@ group_name = "critical"
 # define default timeout, in hours
 timeout_default = 8
 
-timeout_override = { "sensor.hot_water" : 1, "sensor.kitchen_small_temperature": 10 }
+timeout_override = { "sensor.hot_water" : 1, "sensor.kitchen_small_temperature": 12 }
 
 with open(yaml_file, "r") as stream:
     try:

@@ -142,7 +142,7 @@
   condition: []
   action:
   - type: turn_on
-    device_id: cf9a6fd56a6e479083dd8a009009d843
+    device_id: da8ccee5afac07d4fc0d0d863d7f7a9b
     entity_id: switch.shower_towel_radiator
     domain: switch
   mode: single
@@ -174,11 +174,11 @@
   condition: []
   action:
   - type: turn_off
-    device_id: cf9a6fd56a6e479083dd8a009009d843
+    device_id: da8ccee5afac07d4fc0d0d863d7f7a9b
     entity_id: switch.shower_towel_radiator
     domain: switch
   - type: turn_off
-    device_id: 4bc7db6c1e3ea691424de81704d011b1
+    device_id: 4f1af4d45f209dad4a1e92cf82416a8b
     entity_id: switch.bathroom_towel_radiator
     domain: switch
   mode: single
@@ -311,9 +311,8 @@
   alias: Grow light on
   description: ''
   trigger:
-  - platform: sun
-    event: sunrise
-    offset: 0
+  - platform: time
+    at: '14:00:00'
   condition: []
   action:
   - type: turn_on
@@ -330,11 +329,6 @@
     offset: 0
   condition: []
   action:
-  - delay:
-      hours: 1
-      minutes: 0
-      seconds: 0
-      milliseconds: 0
   - type: turn_off
     device_id: 3fa34da5fc855c1739f3e22e039011cc
     entity_id: switch.grow_light
@@ -362,7 +356,7 @@
   condition: []
   action:
   - type: turn_on
-    device_id: 4bc7db6c1e3ea691424de81704d011b1
+    device_id: 4f1af4d45f209dad4a1e92cf82416a8b
     entity_id: switch.bathroom_towel_radiator
     domain: switch
   mode: single
