@@ -52,7 +52,7 @@ Latch timer for "boosts":
 4. The rule itself - when the switch is on, turn on and set a 1800 second timer (30 mins). When the timer runs out, turn off. Note if activated again the timer is reset to 30 mins:
 ```
 Rule1
-  ON Switch1#state=1 DO Backlog Power1 on; RuleTimer1 10 ENDON
+  ON Switch1#state=1 DO Backlog Power1 on; RuleTimer1 1800 ENDON
   ON Rules#Timer=1 DO Power1 off ENDON
   ON Switch1#state=0 DO ENDON
 ```
