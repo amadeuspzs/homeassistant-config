@@ -39,10 +39,25 @@ Config for sensors, where sensors are stored in `sensors.json` is generated via 
 
 ## Tasmota [config](https://tasmota.github.io/docs/Commands/)
 
-1. `TelePeriod 1` == `TelePeriod 300`
+1. Friendly Name 1 == Device Name
+2. Friendly Name 2 == Switch Name
+<!--1. `TelePeriod 1` == `TelePeriod 300` -->
 2. `PowerDelta 110` = report on 10W change
 3. `SetOption65 1` = disable reset on power cycle
-4. `SetOption19 0` = tasmota discovery, 1 = mqtt (deprecated)
+<!--4. `SetOption19 0` = tasmota discovery, 1 = mqtt (deprecated)-->
+
+Latch timer for "boosts":
+
+1. `Rule1 1` - enable the rule we're about to create
+2. `SwitchTopic 0` - disable MQTT messages about this switch (seems to prevent the rule working)
+3. `SwitchMode 2` - inverted switch - sends an on signal when released (falling edge)
+4. The rule itself - when the switch is on, turn on and set a 1800 second timer (30 mins). When the timer runs out, turn off. Note if activated again the timer is reset to 30 mins:
+```
+Rule1
+  ON Switch1#state=1 DO Backlog Power1 on; RuleTimer1 1800 ENDON
+  ON Rules#Timer=1 DO Power1 off ENDON
+  ON Switch1#state=0 DO ENDON
+```
 
 ## Backups
 

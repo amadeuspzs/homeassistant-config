@@ -1,0 +1,64 @@
+boost_central_heating:
+  alias: Boost central heating
+  sequence:
+  - type: turn_on
+    device_id: 60eb31efb9753c8366698e6338f076b9
+    entity_id: switch.oil_boiler
+    domain: switch
+  - delay:
+      hours: 0
+      minutes: 30
+      seconds: 0
+      milliseconds: 0
+  - type: turn_off
+    device_id: 60eb31efb9753c8366698e6338f076b9
+    entity_id: switch.oil_boiler
+    domain: switch
+  mode: single
+  icon: mdi:radiator
+rosalind_staying:
+  alias: Rosalind staying
+  sequence:
+  - service: automation.turn_on
+    data: {}
+    target:
+      entity_id:
+      - automation.master_bedroom_heater_on
+      - automation.central_heating_morning_boost
+      - automation.kitchen_heating_on
+      - automation.bathroom_towel_radiator
+  mode: single
+  icon: mdi:home-account
+rosalind_leaving:
+  alias: Rosalind leaving
+  sequence:
+  - service: automation.turn_off
+    data: {}
+    target:
+      entity_id:
+      - automation.master_bedroom_heater_on
+      - automation.kitchen_heating_on
+      - automation.central_heating_morning_boost
+      - automation.bathroom_towel_radiator
+  mode: single
+  icon: mdi:home-account
+attic_office_15:
+  alias: Attic Office 15
+  sequence:
+  - service: climate.set_temperature
+    data:
+      temperature: 15
+    target:
+      entity_id: climate.attic_office_combi
+  mode: single
+  icon: mdi:heat-wave
+attic_office_12:
+  alias: Attic Office 12
+  sequence:
+  - service: climate.set_temperature
+    data:
+      temperature: 12
+    target:
+      entity_id: climate.attic_office_combi
+  mode: single
+  icon: mdi:heat-wave

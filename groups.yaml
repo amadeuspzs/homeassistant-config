@@ -4,11 +4,11 @@ critical:
     entities:
       - sensor.pip_temperature
       - sensor.hot_water
-        #- sensor.attic_office_temperature
-      - sensor.greenhouse_temperature
-        #- sensor.kitchen_small_temperature
-        #- sensor.bedroom_master_temperature
-        #      - sensor.water_reservoir_signal 
+      - sensor.attic_office_temperature
+        #- sensor.greenhouse_temperature
+        # - sensor.kitchen_small_temperature
+      - sensor.bedroom_master_temperature
+      #- sensor.water_reservoir_signal 
 
 
 # smart plug energy sensors, tied to phantom calculation
@@ -27,12 +27,67 @@ power:
       - sensor.tumble_dryer_energy_power
       - sensor.washing_machine_energy_power
       - sensor.servers_energy_power
+      - sensor.fridge_guest_energy_power
+      - sensor.fridge_freezer_energy_power
+      - sensor.fridge_small_energy_power
+      - sensor.freezer_energy_power
+      - sensor.attic_ups_energy_power 
+      - sensor.roaming_energy_power
+      - sensor.fridge_energy_power
+
+energy_today:
+    name: Power sensors - Energy Today
+    entities:
+      - sensor.greenhouse_heater_energy_today
+      - sensor.kitchen_heater_energy_today
+      - sensor.laundry_heater_energy_today
+      - sensor.main_dishwasher_energy_today
+      - sensor.master_bedroom_heater_energy_today
+      - sensor.pip_s_heater_energy_today
+      - sensor.sebby_heater_energy_today
+      - sensor.small_dishwasher_energy_today
+      - sensor.tackroom_heater_energy_today
+      - sensor.tumble_dryer_energy_today
+      - sensor.washing_machine_energy_today
+      - sensor.servers_energy_today
+      - sensor.fridge_guest_energy_today
+      - sensor.fridge_freezer_energy_today
+      - sensor.fridge_small_energy_today
+      - sensor.freezer_energy_today
+      - sensor.attic_ups_energy_today
+      - sensor.roaming_energy_today
+      - sensor.fridge_energy_today
+
+energy_yesterday:
+    name: Power sensors - Energy Yesterday
+    entities:
+      - sensor.greenhouse_heater_energy_yesterday
+      - sensor.kitchen_heater_energy_yesterday
+      - sensor.laundry_heater_energy_yesterday
+      - sensor.main_dishwasher_energy_yesterday
+      - sensor.master_bedroom_heater_energy_yesterday
+      - sensor.pip_s_heater_energy_yesterday
+      - sensor.sebby_heater_energy_yesterday
+      - sensor.small_dishwasher_energy_yesterday
+      - sensor.tackroom_heater_energy_yesterday
+      - sensor.tumble_dryer_energy_yesterday
+      - sensor.washing_machine_energy_yesterday
+      - sensor.servers_energy_yesterday
+      - sensor.fridge_guest_energy_yesterday
+      - sensor.fridge_freezer_energy_yesterday
+      - sensor.fridge_small_energy_yesterday
+      - sensor.freezer_energy_yesterday
+      - sensor.attic_ups_energy_yesterday
+      - sensor.roaming_energy_yesterday
+      - sensor.fridge_energy_yesterday
 
 # sensors with batteries
 batteries:
     name: Sensor batteries
     entities:
-      - sensor.attic_office_power
+      # - sensor.attic_office_power
+      - sensor.attic_bedroom_kitty_power
+      - sensor.attic_bedroom_nicholas_power
       - sensor.bathroom_master_power
       - sensor.bedroom_k_a_power
       - sensor.bedroom_master_power
@@ -42,13 +97,13 @@ batteries:
       - sensor.garden_cottage_bathroom_power
       - sensor.garden_cottage_bedroom_power
       - sensor.garden_cottage_living_room_power
-      - sensor.greenhouse_power
+      #- sensor.greenhouse_power
       - sensor.kitchen_main_power
       - sensor.kitchen_small_power
       - sensor.laundry_room_power
       - sensor.living_room_k_a_power
       - sensor.living_room_power
-      - sensor.pip_power
+      #- sensor.pip_power
       - sensor.tackroom_power
       - sensor.white_room_power
 
@@ -81,7 +136,13 @@ east_wing:
     - sensor.white_room_temperature
     - sensor.bathroom_master_temperature
     - sensor.bedroom_master_temperature
+
+attics:
+  name: Attics
+  entities:
     - sensor.attic_office_temperature
+    - sensor.attic_bedroom_kitty_temperature
+    - sensor.attic_bedroom_nicholas_temperature
 
 # outbuilding temperature sensors
 outbuildings:
@@ -97,7 +158,7 @@ heaters:
   - switch.attic_boiler
   - switch.attic_radiators
   - switch.bathroom_towel_radiator
-  - switch.sebby_heater
+  - switch.bestie_heater
   - switch.greenhouse_heater
   - switch.hot_water_immersion
   - switch.kitchen_heater
@@ -105,6 +166,7 @@ heaters:
   - switch.master_bedroom_heater
   - switch.oil_boiler
   - switch.pip_s_heater
+  - switch.grow_light
   - switch.seed_mat
   - switch.shower_towel_radiator
   - switch.tackroom_heater
@@ -115,18 +177,25 @@ thermostats:
   entities:
   - climate.attic_office_combi
   - climate.attic_office_electric
+  - climate.bestie_electric
   - climate.central_heating
   - climate.greenhouse
   - climate.hot_water_immersion
   - climate.kitchen
   - climate.master_bedroom
   - climate.pip_s_room_electric
+  - climate.attic_bedroom_kitty
+  - climate.attic_bedroom_nicholas
 
 # automations of interest
 automations:
   name: automations
   entities:
-  - automation.attic_heating_on
+  - automation.attic_office_on_mon
+  - automation.attic_office_on_tue
+  - automation.attic_office_on_wed
+  - automation.attic_office_on_thu
+  - automation.attic_office_on_fri
   - automation.attic_visitors_weekend_on
   - automation.grow_light_on
   - automation.hot_water_bath_on
@@ -136,3 +205,7 @@ automations:
   - automation.pip_s_heating_on
   - automation.tackroom_laundry_heating_on
   - automation.towel_radiators_on
+  - automation.bathroom_towel_radiator
+  - automation.master_bedroom_heater_on
+  - automation.central_heating_morning_boost
+  - automation.bestie_heating_on

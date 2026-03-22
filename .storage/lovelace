@@ -7,12 +7,22 @@
       "views": [
         {
           "title": "Home",
-          "badges": [
-            {
-              "entity": "sensor.water_reservoir_level"
-            }
-          ],
+          "badges": [],
           "cards": [
+            {
+              "type": "entities",
+              "entities": [
+                {
+                  "entity": "sensor.power"
+                },
+                {
+                  "entity": "sensor.group_power"
+                },
+                {
+                  "entity": "sensor.phantom_power"
+                }
+              ]
+            },
             {
               "type": "statistic",
               "entity": "sensor.energy_house",
@@ -28,10 +38,19 @@
               "type": "entities",
               "entities": [
                 {
-                  "entity": "sensor.phantom_power"
+                  "entity": "script.attic_office_15"
                 },
                 {
-                  "entity": "sensor.group_power"
+                  "entity": "script.attic_office_12"
+                },
+                {
+                  "entity": "script.boost_central_heating"
+                },
+                {
+                  "entity": "script.rosalind_staying"
+                },
+                {
+                  "entity": "script.rosalind_leaving"
                 }
               ]
             },
@@ -83,7 +102,11 @@
                 "exclude": []
               },
               "sort": {
-                "method": "friendly_name"
+                "method": "friendly_name",
+                "ignore_case": false,
+                "reverse": false,
+                "numeric": false,
+                "ip": false
               }
             },
             {
@@ -189,6 +212,21 @@
                 "type": "history-graph",
                 "title": "Outbuildings"
               }
+            },
+            {
+              "type": "custom:auto-entities",
+              "filter": {
+                "include": [
+                  {
+                    "group": "group.attics"
+                  }
+                ],
+                "exclude": []
+              },
+              "card": {
+                "type": "history-graph",
+                "title": "Attics"
+              }
             }
           ]
         },
@@ -223,6 +261,14 @@
               "name": "Energy today"
             },
             {
+              "type": "history-graph",
+              "entities": [
+                {
+                  "entity": "sensor.garden_cottage_power"
+                }
+              ]
+            },
+            {
               "type": "entities",
               "entities": [
                 {
@@ -230,12 +276,6 @@
                 },
                 {
                   "entity": "switch.gc_hot_water_immersion"
-                },
-                {
-                  "entity": "automation.garden_cottage_next_day_hot_water"
-                },
-                {
-                  "entity": "automation.garden_cottage_next_day_hot_water_off"
                 },
                 {
                   "entity": "sensor.garden_cottage_living_room_temperature"
@@ -292,14 +332,6 @@
                 }
               ],
               "hours_to_show": 24
-            },
-            {
-              "type": "history-graph",
-              "entities": [
-                {
-                  "entity": "sensor.garden_cottage_power"
-                }
-              ]
             },
             {
               "type": "thermostat",
@@ -377,52 +409,79 @@
           "badges": [],
           "cards": [
             {
+              "type": "custom:auto-entities",
+              "filter": {
+                "include": [
+                  {
+                    "group": "group.power"
+                  }
+                ],
+                "exclude": []
+              },
+              "card": {
+                "type": "entities",
+                "title": "Realtime power"
+              },
+              "sort": {
+                "method": "friendly_name"
+              }
+            },
+            {
               "type": "history-graph",
               "entities": [
-                {
-                  "entity": "sensor.sebby_heater_energy_power"
-                },
-                {
-                  "entity": "sensor.greenhouse_heater_energy_power"
-                },
-                {
-                  "entity": "sensor.kitchen_heater_energy_power"
-                },
-                {
-                  "entity": "sensor.main_dishwasher_energy_power"
-                },
-                {
-                  "entity": "sensor.laundry_heater_energy_power"
-                },
-                {
-                  "entity": "sensor.master_bedroom_heater_energy_power"
-                },
-                {
-                  "entity": "sensor.pip_s_heater_energy_power"
-                },
-                {
-                  "entity": "sensor.small_dishwasher_energy_power"
-                },
-                {
-                  "entity": "sensor.tackroom_heater_energy_power"
-                },
-                {
-                  "entity": "sensor.tumble_dryer_energy_power"
-                },
-                {
-                  "entity": "sensor.washing_machine_energy_power"
-                },
                 {
                   "entity": "sensor.group_power"
                 },
                 {
-                  "entity": "sensor.phantom_power"
-                },
-                {
                   "entity": "sensor.power"
+                }
+              ]
+            },
+            {
+              "type": "custom:auto-entities",
+              "filter": {
+                "include": [
+                  {
+                    "group": "group.energy_yesterday"
+                  }
+                ],
+                "exclude": []
+              },
+              "card": {
+                "type": "entities",
+                "title": "Yesterday's usage"
+              },
+              "sort": {
+                "method": "friendly_name"
+              }
+            }
+          ]
+        },
+        {
+          "theme": "Backend-selected",
+          "title": "Testing",
+          "path": "testing",
+          "badges": [],
+          "cards": [
+            {
+              "type": "history-graph",
+              "entities": [
+                {
+                  "entity": "sensor.attic_office_temperature"
                 },
                 {
-                  "entity": "sensor.servers_energy_power"
+                  "entity": "sensor.attic_office_temperature_mains"
+                }
+              ]
+            },
+            {
+              "type": "entities",
+              "entities": [
+                {
+                  "entity": "sensor.attic_office_temperature"
+                },
+                {
+                  "entity": "sensor.attic_office_temperature_mains"
                 }
               ]
             }
